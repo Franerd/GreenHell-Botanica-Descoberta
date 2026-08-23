@@ -1,0 +1,295 @@
+{
+  "schema": 1,
+  "idioma": "pt-BR",
+  "politicaExibicao": "Nome comum — nome científico",
+  "observacao": "Catálogo 1.0.0 baseado nos ItemIDs da versão 2.95 instalada. Entradas de confiança média preservam a identificação usada pelo jogo quando a espécie real não é inequívoca.",
+  "especies": [
+    {
+      "chave": "quassia_amara",
+      "nomeComum": "quássia-amarga",
+      "nomeCientifico": "Quassia amara",
+      "confianca": "alta",
+      "itens": {
+        "Quassia_Amara_flowers": "flor de quássia-amarga",
+        "Quassia_Amara_flowers_Dryed": "flor de quássia-amarga (seca)",
+        "QuassiaAmara_Seeds": "semente de quássia-amarga"
+      }
+    },
+    {
+      "chave": "cocona",
+      "nomeComum": "maná-cubiu / tomate-de-índio",
+      "nomeCientifico": "Solanum sessiliflorum",
+      "confianca": "media_alta",
+      "itens": {
+        "Cocona_fruit": "maná-cubiu / tomate-de-índio",
+        "Cocona_fruit_Spoiled": "maná-cubiu / tomate-de-índio (estragado)",
+        "Cocona_Seeds": "sementes de maná-cubiu"
+      }
+    },
+    {
+      "chave": "monstera_deliciosa",
+      "nomeComum": "costela-de-adão",
+      "nomeCientifico": "Monstera deliciosa",
+      "confianca": "alta",
+      "itens": {
+        "monstera_deliciosa_flower": "flor de costela-de-adão",
+        "monstera_deliciosa_flower_Dryed": "flor de costela-de-adão (seca)",
+        "monstera_deliciosa_fruit": "banana-ananás (fruto da costela-de-adão)",
+        "Monstera_Seeds": "sementes de costela-de-adão"
+      }
+    },
+    {
+      "chave": "plantain_lily",
+      "nomeComum": "hosta / funkia",
+      "nomeCientifico": "Hosta spp.",
+      "confianca": "alta_para_genero",
+      "itens": {
+        "Plantain_lily_leaf": "folha de hosta",
+        "plantain_lilly_flowers": "flor de hosta",
+        "plantain_lilly_flowers_Dryed": "flor de hosta (seca)",
+        "PlantainLilly_Seeds": "propágulo de hosta"
+      }
+    },
+    {
+      "chave": "guanabana",
+      "nomeComum": "graviola / guanábana",
+      "nomeCientifico": "Annona muricata",
+      "confianca": "alta",
+      "itens": {
+        "Guanabana_Fruit": "graviola",
+        "Guanabana_Fruit_Spoiled": "graviola (estragada)",
+        "Guanabana_Seeds": "sementes de graviola"
+      }
+    },
+    {
+      "chave": "malanga",
+      "nomeComum": "malanga",
+      "nomeCientifico": "Xanthosoma spp.",
+      "confianca": "alta_para_genero",
+      "itens": {
+        "Malanga_bulb": "cormo de malanga",
+        "Malanga_bulb_cooked": "cormo de malanga (cozido)",
+        "Malanga_bulb_Spoiled": "cormo de malanga (estragado)",
+        "Malanga_Bulb_dryed": "cormo de malanga (seco)",
+        "Malanga_Seeds": "raiz de malanga para plantio"
+      }
+    },
+    {
+      "chave": "cassava",
+      "nomeComum": "mandioca",
+      "nomeCientifico": "Manihot esculenta",
+      "confianca": "alta",
+      "itens": {
+        "Cassava_bulb": "raiz de mandioca",
+        "Cassava_bulb_Cooked": "raiz de mandioca (cozida)",
+        "Cassava_bulb_Spoiled": "raiz de mandioca (estragada)",
+        "Cassava_bulb_dryed": "raiz de mandioca (seca)",
+        "Casava_Seeds": "raiz de mandioca para plantio"
+      }
+    },
+    {
+      "chave": "albahaca",
+      "nomeComum": "manjericão-de-folha-larga",
+      "nomeCientifico": "Ocimum basilicum",
+      "confianca": "media",
+      "itens": {
+        "Albahaca_Leaf": "folha de manjericão-de-folha-larga",
+        "Albahaca_Flower": "flor de manjericão-de-folha-larga",
+        "Albahaca_flower_Dryed": "flor de manjericão-de-folha-larga (seca)",
+        "Albahaca_Seeds": "sementes de manjericão-de-folha-larga"
+      }
+    },
+    {
+      "chave": "molineria",
+      "nomeComum": "molineria",
+      "nomeCientifico": "Molineria capitulata",
+      "sinonimoTaxonomico": "Curculigo capitulata",
+      "confianca": "media",
+      "itens": {
+        "Molineria_leaf": "folha de molineria",
+        "molineria_flowers": "flor de molineria",
+        "molineria_flowers_Dryed": "flor de molineria (seca)",
+        "Molineria_Seeds": "propágulo de molineria"
+      }
+    },
+    {
+      "chave": "tobacco",
+      "nomeComum": "tabaco",
+      "nomeCientifico": "Nicotiana tabacum",
+      "confianca": "alta",
+      "itens": {
+        "Tobacco_Leaf": "folha de tabaco",
+        "Dryed_Tobacco_Leaf": "folha de tabaco (seca)",
+        "tobacco_flowers": "flor de tabaco",
+        "tobacco_flowers_Dryed": "flor de tabaco (seca)",
+        "Tobacco_Seeds": "sementes de tabaco"
+      }
+    },
+    {
+      "chave": "psychotria",
+      "nomeComum": "chacrona / psychotria",
+      "nomeCientifico": "Psychotria viridis",
+      "confianca": "alta",
+      "itens": {
+        "psychotria_viridis": "folhas de chacrona",
+        "psychotria_viridis_Dryed": "folhas de chacrona (secas)",
+        "psychotria_viridis_berries": "bagas de psychotria",
+        "psychotria_viridis_berries_Dryed": "bagas de psychotria (secas)",
+        "Psychotria_Seeds": "sementes de psychotria"
+      }
+    },
+    {
+      "chave": "banisteriopsis",
+      "nomeComum": "mariri / cipó-caapi",
+      "nomeCientifico": "Banisteriopsis caapi",
+      "confianca": "alta",
+      "itens": {
+        "banisteriopsis_scraps": "fragmentos de cipó-caapi"
+      }
+    },
+    {
+      "chave": "coca",
+      "nomeComum": "coca",
+      "nomeCientifico": "Erythroxylum coca",
+      "confianca": "alta",
+      "itens": {
+        "coca_leafs": "folhas de coca"
+      }
+    },
+    {
+      "chave": "brazil_nut",
+      "nomeComum": "castanha-do-pará",
+      "nomeCientifico": "Bertholletia excelsa",
+      "confianca": "alta",
+      "itens": {
+        "Brazil_nut_whole": "ouriço de castanha-do-pará",
+        "Brazil_nut": "castanha-do-pará",
+        "Brazil_nut_Spoiled": "castanha-do-pará (estragada)",
+        "Brazilian_Seeds": "castanha-do-pará para plantio"
+      }
+    },
+    {
+      "chave": "raffia",
+      "nomeComum": "palmeira-ráfia",
+      "nomeCientifico": "Raphia spp.",
+      "confianca": "alta_para_genero",
+      "itens": {
+        "Raffia_nut": "fruto de palmeira-ráfia",
+        "Raffia_nut_Spoiled": "fruto de palmeira-ráfia (estragado)",
+        "Raffia_Seeds": "semente de palmeira-ráfia"
+      }
+    },
+    {
+      "chave": "banana",
+      "nomeComum": "bananeira",
+      "nomeCientifico": "Musa spp.",
+      "confianca": "alta_para_genero",
+      "itens": {
+        "Banana": "banana",
+        "Banana_Spoiled": "banana (estragada)",
+        "Banana_Seeds": "sementes de banana",
+        "Banana_Leaf": "folha de bananeira"
+      }
+    },
+    {
+      "chave": "coconut",
+      "nomeComum": "coqueiro",
+      "nomeCientifico": "Cocos nucifera",
+      "confianca": "alta",
+      "itens": {
+        "Coconut_Green": "coco-verde",
+        "Coconut": "coco",
+        "Coconut_flesh": "polpa de coco",
+        "Coconut_flesh_Cooked": "polpa de coco (cozida)",
+        "Coconut_flesh_Spoiled": "polpa de coco (estragada)",
+        "Coconut_Shell_Flesh": "meio coco com polpa",
+        "Coconut_Shell_Flesh_Spoiled": "meio coco com polpa (estragada)"
+      }
+    },
+    {
+      "chave": "water_lily",
+      "nomeComum": "nenúfar",
+      "nomeCientifico": "Nymphaea spp.",
+      "confianca": "alta_para_genero",
+      "itens": {
+        "lily_flower": "flor de nenúfar"
+      }
+    },
+    {
+      "chave": "ficus",
+      "nomeComum": "figueira",
+      "nomeCientifico": "Ficus spp.",
+      "confianca": "alta_para_genero",
+      "itens": {
+        "Ficus_leaf": "folha de figueira"
+      }
+    },
+    {
+      "chave": "palm_heart",
+      "nomeComum": "palmeira produtora de palmito",
+      "nomeCientifico": "Arecaceae sp.",
+      "confianca": "baixa_para_especie",
+      "itens": {
+        "Palm_heart": "palmito",
+        "Palm_heart_Spoiled": "palmito (estragado)",
+        "Palm_Heart_dryed": "palmito (seco)"
+      }
+    },
+    {
+      "chave": "phallus_indusiatus",
+      "nomeComum": "cogumelo véu-de-noiva",
+      "nomeCientifico": "Phallus indusiatus",
+      "confianca": "alta",
+      "itens": {
+        "Phallus_indusiatus": "cogumelo véu-de-noiva",
+        "Phallus_indusiatus_Dryed": "cogumelo véu-de-noiva (seco)",
+        "Phallus_indusiatus_Spoiled": "cogumelo véu-de-noiva (estragado)"
+      }
+    },
+    {
+      "chave": "gerronema_viridilucens",
+      "nomeComum": "gerronema bioluminescente",
+      "nomeCientifico": "Gerronema viridilucens",
+      "confianca": "alta",
+      "itens": {
+        "Gerronema_viridilucens": "gerronema bioluminescente",
+        "Gerronema_viridilucens_dryed": "gerronema bioluminescente (seco)",
+        "Gerronema_viridilucens_Spoiled": "gerronema bioluminescente (estragado)"
+      }
+    },
+    {
+      "chave": "gerronema_retiarium",
+      "nomeComum": "gerronema retiário",
+      "nomeCientifico": "Gerronema retiarium",
+      "confianca": "alta",
+      "itens": {
+        "Gerronema_retiarium": "gerronema retiário",
+        "Gerronema_retiarium_dryed": "gerronema retiário (seco)",
+        "Gerronema_retiarium_Spoiled": "gerronema retiário (estragado)"
+      }
+    },
+    {
+      "chave": "indigo_blue_leptonia",
+      "nomeComum": "leptônia-azul",
+      "nomeCientifico": "Entoloma subcarneum",
+      "identificacaoDoJogo": "Indigo Blue Leptonia",
+      "confianca": "media_alta",
+      "itens": {
+        "indigo_blue_leptonia": "leptônia-azul",
+        "indigo_blue_leptonia_dryed": "leptônia-azul (seca)",
+        "indigo_blue_leptonia_Spoiled": "leptônia-azul (estragada)"
+      }
+    },
+    {
+      "chave": "copa_hongo",
+      "nomeComum": "taça-escarlate / cogumelo-de-copa",
+      "nomeCientifico": "Sarcoscypha coccinea",
+      "confianca": "alta",
+      "itens": {
+        "copa_hongo": "cogumelo-de-copa",
+        "copa_hongo_dryed": "cogumelo-de-copa (seco)",
+        "copa_hongo_Spoiled": "cogumelo-de-copa (estragado)"
+      }
+    }
+  ]
+}

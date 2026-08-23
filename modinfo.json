@@ -1,0 +1,13 @@
+{
+  "name": "Botânica Descoberta",
+  "author": "FraNerd",
+  "description": "Exibe nomes botânicos comuns e científicos no diário, incluindo plantas, frutos, sementes e cogumelos.",
+  "version": "1.0.0",
+  "license": "GNU AGPLv3",
+  "icon": "icon.png",
+  "banner": "banner.jpg",
+  "gameVersion": "2.9.5",
+  "updateUrl": "https://www.greenhellmodding.com/api/v1/mods/botanica-descoberta/version.txt",
+  "isModPermanent": false,
+  "excludedFiles": ["catalogo-botanica-descoberta.json", "README.txt"]
+}
