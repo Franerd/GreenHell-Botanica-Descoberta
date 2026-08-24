@@ -1,43 +1,43 @@
-# Botânica Descoberta
+# Botany Discovery
 
-Mod para Green Hell que exibe nomes comuns e científicos nas entradas botânicas já descobertas pelo jogador.
+A Green Hell mod that displays common and scientific botanical names for notebook entries already discovered by the player.
 
-## Características
+## Features
 
-- 85 `ItemIDs` distribuídos em 25 espécies ou grupos botânicos.
-- Nomes específicos para folhas, flores, frutos, sementes, raízes e cogumelos.
-- Modos de exibição comum, científico ou combinado.
-- Traduções em português do Brasil, inglês e espanhol, selecionadas automaticamente pelo idioma do Green Hell.
-- Inglês como fallback para os demais idiomas do jogo.
-- Funciona localmente para host e cliente em partidas cooperativas.
-- Não desbloqueia páginas, não altera progresso e não grava nomes no save.
+- 85 `ItemIDs` across 25 botanical species or groups.
+- Specific names for leaves, flowers, fruits, seeds, roots and mushrooms.
+- Common, scientific or combined display modes.
+- Automatic Brazilian Portuguese, English and Spanish localization based on the Green Hell language.
+- English fallback for other game languages.
+- Works locally for host and client in cooperative games.
+- Does not unlock pages, alter progress or write names to save files.
 
-## Comandos
+## Commands
 
 ```text
 botanica status
-botanica comum
-botanica cientifico
-botanica ambos
-botanica aplicar
-botanica cogumelos
+botanica common
+botanica scientific
+botanica both
+botanica apply
+botanica mushrooms
 ```
 
-Os comandos também aceitam `common`, `scientific`, `both`, `apply`, `mushrooms`, `comun` e `hongos`.
+Portuguese and Spanish aliases remain available for compatibility.
 
-## Instalação
+## Installation
 
-Copie o arquivo `.ghmod` da release para a pasta `mods` do Green Hell e compile/ative pelo ModLoader.
+Copy the `.ghmod` file from the release into the Green Hell `mods` folder, then compile and activate it through the ModLoader.
 
-## Compatibilidade
+## Compatibility
 
 - Green Hell 2.9.5
-- Testado como host e cliente.
+- Tested as host and client.
 
-## Desenvolvimento
+## Development
 
-O ModCompiler compila os arquivos `BotanicaDescoberta.cs`, `BotanicaCatalog.cs` e `BotanicaLocalization.cs`. O arquivo `catalogo-botanica-descoberta.json` documenta a origem lógica dos nomes, o agrupamento das espécies e os níveis de confiança das identificações.
+The ModCompiler compiles `BotanicaDescoberta.cs`, `BotanicaCatalog.cs` and `BotanicaLocalization.cs`. The `catalogo-botanica-descoberta.json` file documents the logical source of the names, species grouping and identification confidence levels.
 
-## Licença
+## License
 
-GNU Affero General Public License v3.0. Consulte [LICENSE](LICENSE).
+GNU Affero General Public License v3.0. See [LICENSE](LICENSE).

@@ -1,32 +1,32 @@
-BOTÂNICA DESCOBERTA 1.0.0
+BOTANY DISCOVERY 1.0.1
 
-Objetivo:
-- Exibir nomes comuns e científicos nos títulos botânicos do diário.
-- Cobrir plantas, frutos, sementes, raízes, flores e cogumelos.
-- Respeitar a descoberta normal do jogo: o mod não desbloqueia páginas.
-- Seguir automaticamente o idioma configurado no Green Hell: PT-BR, English ou Español.
-- Usar inglês como fallback para os demais idiomas do jogo.
+Purpose:
+- Display common and scientific botanical names in notebook titles.
+- Cover plants, fruits, seeds, roots, flowers and mushrooms.
+- Preserve normal game discovery: the mod does not unlock pages.
+- Automatically follow the Green Hell language: Brazilian Portuguese, English or Spanish.
+- Use English as fallback for other game languages.
 
-Comandos:
+Commands:
 - botanica status
-- botanica comum
-- botanica cientifico
-- botanica ambos
-- botanica aplicar
-- botanica cogumelos
+- botanica common
+- botanica scientific
+- botanica both
+- botanica apply
+- botanica mushrooms
 
-Os comandos também aceitam os equivalentes em inglês e espanhol.
+Portuguese and Spanish aliases remain available for compatibility.
 
-Segurança:
-- Alterações somente em memória.
-- Não modifica diretamente arquivos de save.
-- Não altera efeitos, nutrição, receitas ou sincronização cooperativa.
+Safety:
+- Changes text in memory only.
+- Does not modify save files directly.
+- Does not alter effects, nutrition, recipes or cooperative synchronization.
 
-Compatibilidade cooperativa:
-- Testado como host e como cliente.
-- Cada jogador vê os nomes localmente quando possui o mod ativo.
-- O mod não transmite nem persiste nomes pelo save ou pela rede.
+Cooperative compatibility:
+- Tested as host and client.
+- Each player sees the names locally when the mod is active.
+- Names are not transmitted or persisted through saves or the network.
 
-Catálogo 1.0.0:
-- 85 ItemIDs distribuídos em 25 espécies ou grupos botânicos.
-- Cada parte coletada recebe seu próprio nome: folha, flor, fruto, semente, raiz ou cogumelo.
+Catalog 1.0.1:
+- 85 ItemIDs across 25 botanical species or groups.
+- Each collected part has its own name: leaf, flower, fruit, seed, root or mushroom.

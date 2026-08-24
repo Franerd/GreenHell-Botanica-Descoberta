@@ -2,7 +2,7 @@
   "schema": 1,
   "idioma": "pt-BR",
   "politicaExibicao": "Nome comum localizado (PT-BR/en/es) — nome científico",
-  "observacao": "Catálogo 1.0.0 baseado nos ItemIDs da versão 2.95 instalada. Entradas de confiança média preservam a identificação usada pelo jogo quando a espécie real não é inequívoca.",
+  "observacao": "Catálogo 1.0.1 baseado nos ItemIDs da versão 2.95 instalada. Entradas de confiança média preservam a identificação usada pelo jogo quando a espécie real não é inequívoca.",
   "especies": [
     {
       "chave": "quassia_amara",
