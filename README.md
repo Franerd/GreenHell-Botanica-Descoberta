@@ -7,6 +7,8 @@ Mod para Green Hell que exibe nomes comuns e científicos nas entradas botânica
 - 85 `ItemIDs` distribuídos em 25 espécies ou grupos botânicos.
 - Nomes específicos para folhas, flores, frutos, sementes, raízes e cogumelos.
 - Modos de exibição comum, científico ou combinado.
+- Traduções em português do Brasil, inglês e espanhol, selecionadas automaticamente pelo idioma do Green Hell.
+- Inglês como fallback para os demais idiomas do jogo.
 - Funciona localmente para host e cliente em partidas cooperativas.
 - Não desbloqueia páginas, não altera progresso e não grava nomes no save.
 
@@ -20,6 +22,8 @@ botanica ambos
 botanica aplicar
 botanica cogumelos
 ```
+
+Os comandos também aceitam `common`, `scientific`, `both`, `apply`, `mushrooms`, `comun` e `hongos`.
 
 ## Instalação
 

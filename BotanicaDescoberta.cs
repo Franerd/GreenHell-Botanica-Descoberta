@@ -13,7 +13,7 @@ public class BotanicaDescoberta : Mod {
     public void Start() {
         _harmony = new Harmony(HarmonyId);
         _harmony.PatchAll(Assembly.GetExecutingAssembly());
-        Debug.Log("[BotanicaDescoberta] 1.0.0 carregado: " + BotanicaCatalog.Count + " ItemIDs catalogados.");
+        Debug.Log("[BotanicaDescoberta] 1.0.0 | " + BotanicaCatalog.Count + " ItemIDs | " + BotanicaLocalization.LanguageCode + ".");
     }
 
     public void OnModUnload() {
@@ -27,26 +27,43 @@ public class BotanicaDescoberta : Mod {
     public static void Command(string[] args) {
         string action = args == null || args.Length == 0 ? "status" : args[0].ToLowerInvariant();
         if (action == "status") {
-            Debug.Log("Botânica Descoberta: " + BotanicaCatalog.Count + " ItemIDs; modo: " + BotanicaCatalog.ModeName + ".");
-            Debug.Log("O mod altera apenas textos em memória; não desbloqueia páginas e não grava nomes no save.");
+            Debug.Log(Message(
+                "Botânica Descoberta: " + BotanicaCatalog.Count + " ItemIDs; modo: " + BotanicaCatalog.ModeName + "; idioma: " + BotanicaLocalization.LanguageCode + ".",
+                "Botany Discovery: " + BotanicaCatalog.Count + " ItemIDs; mode: " + BotanicaCatalog.ModeName + "; language: " + BotanicaLocalization.LanguageCode + ".",
+                "Botánica Descubierta: " + BotanicaCatalog.Count + " ItemIDs; modo: " + BotanicaCatalog.ModeName + "; idioma: " + BotanicaLocalization.LanguageCode + "."));
+            Debug.Log(Message(
+                "O mod altera apenas textos em memória; não desbloqueia páginas e não grava nomes no save.",
+                "The mod only changes text in memory; it does not unlock pages or save names to the save file.",
+                "El mod solo cambia textos en memoria; no desbloquea páginas ni guarda nombres en la partida."));
             return;
         }
-        if (action == "comum" || action == "cientifico" || action == "ambos") {
-            BotanicaCatalog.SetMode(action);
+        if (action == "comum" || action == "common" || action == "comun" ||
+            action == "cientifico" || action == "scientific" || action == "ambos" || action == "both") {
+            string mode = action;
+            if (action == "common" || action == "comun") mode = "comum";
+            else if (action == "scientific") mode = "cientifico";
+            else if (action == "both") mode = "ambos";
+            BotanicaCatalog.SetMode(mode);
             RefreshVisibleTitles();
-            Debug.Log("Modo botânico alterado para: " + BotanicaCatalog.ModeName + ".");
+            Debug.Log(Message("Modo botânico: ", "Botanical mode: ", "Modo botánico: ") + BotanicaCatalog.ModeName + ".");
             return;
         }
-        if (action == "aplicar") {
+        if (action == "aplicar" || action == "apply") {
             int changed = RefreshVisibleTitles();
-            Debug.Log("Títulos botânicos atualizados: " + changed + ".");
+            Debug.Log(Message("Títulos botânicos atualizados: ", "Botanical titles updated: ", "Títulos botánicos actualizados: ") + changed + ".");
             return;
         }
-        if (action == "cogumelos") {
-            Debug.Log("Cogumelos: véu-de-noiva, Gerronema viridilucens, Gerronema retiarium, leptônia-azul e cogumelo-de-copa.");
+        if (action == "cogumelos" || action == "mushrooms" || action == "hongos") {
+            Debug.Log(Message(
+                "Cogumelos: véu-de-noiva, Gerronema viridilucens, Gerronema retiarium, leptônia-azul e cogumelo-de-copa.",
+                "Mushrooms: veiled lady, Gerronema viridilucens, Gerronema retiarium, indigo blue leptonia and scarlet cup.",
+                "Hongos: velo de novia, Gerronema viridilucens, Gerronema retiarium, leptonia azul índigo y copa escarlata."));
             return;
         }
-        Debug.Log("Uso: botanica [status|comum|cientifico|ambos|aplicar|cogumelos]");
+        Debug.Log(Message(
+            "Uso: botanica [status|comum|cientifico|ambos|aplicar|cogumelos]",
+            "Usage: botanica [status|common|scientific|both|apply|mushrooms]",
+            "Uso: botanica [status|comun|cientifico|ambos|aplicar|hongos]"));
     }
 
     internal static int RefreshVisibleTitles() {
@@ -58,6 +75,12 @@ public class BotanicaDescoberta : Mod {
             }
         }
         return changed;
+    }
+
+    private static string Message(string portuguese, string english, string spanish) {
+        if (BotanicaLocalization.LanguageCode == "pt-BR") return portuguese;
+        if (BotanicaLocalization.LanguageCode == "es") return spanish;
+        return english;
     }
 }
 

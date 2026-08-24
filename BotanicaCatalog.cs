@@ -110,9 +110,20 @@ internal static class BotanicaCatalog {
     internal static int Count { get { return Entries.Count; } }
     internal static string ModeName {
         get {
-            if (_mode == DisplayMode.Common) return "nome comum";
-            if (_mode == DisplayMode.Scientific) return "nome científico";
-            return "nome comum + científico";
+            string language = BotanicaLocalization.LanguageCode;
+            if (language == "es") {
+                if (_mode == DisplayMode.Common) return "nombre común";
+                if (_mode == DisplayMode.Scientific) return "nombre científico";
+                return "nombre común + científico";
+            }
+            if (language == "pt-BR") {
+                if (_mode == DisplayMode.Common) return "nome comum";
+                if (_mode == DisplayMode.Scientific) return "nome científico";
+                return "nome comum + científico";
+            }
+            if (_mode == DisplayMode.Common) return "common name";
+            if (_mode == DisplayMode.Scientific) return "scientific name";
+            return "common + scientific name";
         }
     }
 
@@ -128,9 +139,10 @@ internal static class BotanicaCatalog {
             value = null;
             return false;
         }
-        if (_mode == DisplayMode.Common) value = entry.Common;
-        else if (_mode == DisplayMode.Scientific) value = entry.Scientific + StateSuffix(entry.Common);
-        else value = entry.Common + " — " + entry.Scientific;
+        string common = BotanicaLocalization.GetCommonName(itemId, entry.Common);
+        if (_mode == DisplayMode.Common) value = common;
+        else if (_mode == DisplayMode.Scientific) value = entry.Scientific + StateSuffix(common);
+        else value = common + " — " + entry.Scientific;
         return true;
     }
 

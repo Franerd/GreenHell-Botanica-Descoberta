@@ -4,6 +4,8 @@ Objetivo:
 - Exibir nomes comuns e científicos nos títulos botânicos do diário.
 - Cobrir plantas, frutos, sementes, raízes, flores e cogumelos.
 - Respeitar a descoberta normal do jogo: o mod não desbloqueia páginas.
+- Seguir automaticamente o idioma configurado no Green Hell: PT-BR, English ou Español.
+- Usar inglês como fallback para os demais idiomas do jogo.
 
 Comandos:
 - botanica status
@@ -12,6 +14,8 @@ Comandos:
 - botanica ambos
 - botanica aplicar
 - botanica cogumelos
+
+Os comandos também aceitam os equivalentes em inglês e espanhol.
 
 Segurança:
 - Alterações somente em memória.
