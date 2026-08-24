@@ -107,3 +107,22 @@ internal static class BotanicaTitlePatch {
         return true;
     }
 }
+
+// PlantsTab.Init localizes every text after its child components may already
+// have received OnEnable. Reapply our titles after that pass so entries such
+// as Palm Heart are not overwritten by the game's default localization.
+[HarmonyPatch(typeof(PlantsTab), "Init")]
+internal static class BotanicaPlantsTabInitPatch {
+    [HarmonyPostfix]
+    private static void Postfix() {
+        BotanicaDescoberta.RefreshVisibleTitles();
+    }
+}
+
+[HarmonyPatch(typeof(PlantsTab), "OnEnable")]
+internal static class BotanicaPlantsTabEnablePatch {
+    [HarmonyPostfix]
+    private static void Postfix() {
+        BotanicaDescoberta.RefreshVisibleTitles();
+    }
+}
