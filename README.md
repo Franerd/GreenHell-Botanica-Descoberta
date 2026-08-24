@@ -36,7 +36,7 @@ Copie o arquivo `.ghmod` da release para a pasta `mods` do Green Hell e compile/
 
 ## Desenvolvimento
 
-O ModCompiler compila os arquivos `BotanicaDescoberta.cs` e `BotanicaCatalog.cs`. O arquivo `catalogo-botanica-descoberta.json` documenta a origem lógica dos nomes, o agrupamento das espécies e os níveis de confiança das identificações.
+O ModCompiler compila os arquivos `BotanicaDescoberta.cs`, `BotanicaCatalog.cs` e `BotanicaLocalization.cs`. O arquivo `catalogo-botanica-descoberta.json` documenta a origem lógica dos nomes, o agrupamento das espécies e os níveis de confiança das identificações.
 
 ## Licença
 
