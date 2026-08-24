@@ -13,7 +13,7 @@ public class BotanicaDescoberta : Mod {
     public void Start() {
         _harmony = new Harmony(HarmonyId);
         _harmony.PatchAll(Assembly.GetExecutingAssembly());
-        Debug.Log("[BotanicaDescoberta] 1.0.1 | " + BotanicaCatalog.Count + " ItemIDs | " + BotanicaLocalization.LanguageCode + ".");
+        Debug.Log("[BotanicaDescoberta] 1.0.2 | " + BotanicaCatalog.Count + " ItemIDs | " + BotanicaLocalization.LanguageCode + ".");
     }
 
     public void OnModUnload() {
@@ -64,6 +64,11 @@ public class BotanicaDescoberta : Mod {
             "Uso: botanica [status|comum|cientifico|ambos|aplicar|cogumelos]",
             "Usage: botanica [status|common|scientific|both|apply|mushrooms]",
             "Uso: botanica [status|comun|cientifico|ambos|aplicar|hongos]"));
+    }
+
+    [ConsoleCommand("botany", "Botanical names in the notebook")]
+    public static void CommandEnglish(string[] args) {
+        Command(args);
     }
 
     internal static int RefreshVisibleTitles() {

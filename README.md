@@ -15,15 +15,15 @@ A Green Hell mod that displays common and scientific botanical names for noteboo
 ## Commands
 
 ```text
-botanica status
-botanica common
-botanica scientific
-botanica both
-botanica apply
-botanica mushrooms
+botany status
+botany common
+botany scientific
+botany both
+botany apply
+botany mushrooms
 ```
 
-Portuguese and Spanish aliases remain available for compatibility.
+The legacy `botanica` command and Portuguese and Spanish subcommand aliases remain available for compatibility.
 
 ## Installation
 

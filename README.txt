@@ -1,4 +1,4 @@
-BOTANY DISCOVERY 1.0.1
+BOTANY DISCOVERY 1.0.2
 
 Purpose:
 - Display common and scientific botanical names in notebook titles.
@@ -8,14 +8,14 @@ Purpose:
 - Use English as fallback for other game languages.
 
 Commands:
-- botanica status
-- botanica common
-- botanica scientific
-- botanica both
-- botanica apply
-- botanica mushrooms
+- botany status
+- botany common
+- botany scientific
+- botany both
+- botany apply
+- botany mushrooms
 
-Portuguese and Spanish aliases remain available for compatibility.
+The legacy `botanica` command and Portuguese and Spanish subcommand aliases remain available for compatibility.
 
 Safety:
 - Changes text in memory only.
@@ -27,6 +27,6 @@ Cooperative compatibility:
 - Each player sees the names locally when the mod is active.
 - Names are not transmitted or persisted through saves or the network.
 
-Catalog 1.0.1:
+Catalog 1.0.2:
 - 85 ItemIDs across 25 botanical species or groups.
 - Each collected part has its own name: leaf, flower, fruit, seed, root or mushroom.
