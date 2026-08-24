@@ -2,7 +2,7 @@
   "name": "Botany Discovery",
   "author": "FraNerd",
   "description": "Displays common and scientific botanical names in the game language (Brazilian Portuguese, English and Spanish), including plants, fruits, seeds and mushrooms.",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "license": "GNU AGPLv3",
   "icon": "icon.png",
   "banner": "banner.jpg",

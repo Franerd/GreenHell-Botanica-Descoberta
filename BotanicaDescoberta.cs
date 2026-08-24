@@ -13,7 +13,7 @@ public class BotanicaDescoberta : Mod {
     public void Start() {
         _harmony = new Harmony(HarmonyId);
         _harmony.PatchAll(Assembly.GetExecutingAssembly());
-        Debug.Log("[BotanicaDescoberta] 1.0.2 | " + BotanicaCatalog.Count + " ItemIDs | " + BotanicaLocalization.LanguageCode + ".");
+        Debug.Log("[BotanicaDescoberta] 1.0.1 | " + BotanicaCatalog.Count + " ItemIDs | " + BotanicaLocalization.LanguageCode + ".");
     }
 
     public void OnModUnload() {

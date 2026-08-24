@@ -1,4 +1,4 @@
-BOTANY DISCOVERY 1.0.2
+BOTANY DISCOVERY 1.0.1
 
 Purpose:
 - Display common and scientific botanical names in notebook titles.
@@ -27,6 +27,6 @@ Cooperative compatibility:
 - Each player sees the names locally when the mod is active.
 - Names are not transmitted or persisted through saves or the network.
 
-Catalog 1.0.2:
+Catalog 1.0.1:
 - 85 ItemIDs across 25 botanical species or groups.
 - Each collected part has its own name: leaf, flower, fruit, seed, root or mushroom.
