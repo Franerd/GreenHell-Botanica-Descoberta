@@ -47,7 +47,7 @@ foreach ($species in $catalog.species) {
     }
 }
 
-if ($count -ne 85) { throw "Expected 85 items, found $count" }
+if ($count -ne 80) { throw "Expected 80 items, found $count" }
 $lines.Add('    }')
 $lines.Add('}')
 

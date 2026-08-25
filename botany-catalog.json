@@ -48,7 +48,7 @@
     },
     {
       "key": "cocona",
-      "commonNamePtBr": "cubiu",
+      "commonNamePtBr": "tomate-de-índio",
       "scientificName": "Solanum sessiliflorum",
       "confidence": "media_alta",
       "taxonomicSynonym": "",
@@ -58,7 +58,7 @@
           "id": "Cocona_fruit",
           "scientific": "Solanum sessiliflorum",
           "names": {
-            "pt-BR": "Cubiu",
+            "pt-BR": "Tomate-de-índio",
             "en": "Cocona",
             "es": "Cocona"
           }
@@ -67,7 +67,7 @@
           "id": "Cocona_fruit_Spoiled",
           "scientific": "Solanum sessiliflorum",
           "names": {
-            "pt-BR": "Cubiu (estragado)",
+            "pt-BR": "Tomate-de-índio (estragado)",
             "en": "Cocona (spoiled)",
             "es": "Cocona (estropeado)"
           }
@@ -76,7 +76,7 @@
           "id": "Cocona_Seeds",
           "scientific": "Solanum sessiliflorum",
           "names": {
-            "pt-BR": "Sementes de cubiu",
+            "pt-BR": "Sementes de tomate-de-índio",
             "en": "Cocona seeds",
             "es": "Semillas de cocona"
           }
@@ -113,7 +113,7 @@
           "id": "monstera_deliciosa_fruit",
           "scientific": "Monstera deliciosa",
           "names": {
-            "pt-BR": "Fruto de costela-de-adão",
+            "pt-BR": "Banana-ananás",
             "en": "Swiss cheese plant fruit",
             "es": "Fruto de costilla de Adán"
           }
@@ -470,61 +470,6 @@
       ]
     },
     {
-      "key": "psychotria",
-      "commonNamePtBr": "chacrona",
-      "scientificName": "Psychotria viridis",
-      "confidence": "alta",
-      "taxonomicSynonym": "",
-      "gameIdentification": "",
-      "items": [
-        {
-          "id": "psychotria_viridis",
-          "scientific": "Psychotria viridis",
-          "names": {
-            "pt-BR": "Folhas de chacrona",
-            "en": "Chacruna leaves",
-            "es": "Hojas de chacruna"
-          }
-        },
-        {
-          "id": "psychotria_viridis_Dryed",
-          "scientific": "Psychotria viridis",
-          "names": {
-            "pt-BR": "Folhas de chacrona (secas)",
-            "en": "Chacruna leaves (dried)",
-            "es": "Hojas de chacruna (secas)"
-          }
-        },
-        {
-          "id": "psychotria_viridis_berries",
-          "scientific": "Psychotria viridis",
-          "names": {
-            "pt-BR": "Bagas de chacrona",
-            "en": "Chacruna berries",
-            "es": "Bayas de chacruna"
-          }
-        },
-        {
-          "id": "psychotria_viridis_berries_Dryed",
-          "scientific": "Psychotria viridis",
-          "names": {
-            "pt-BR": "Bagas de chacrona (secas)",
-            "en": "Chacruna berries (dried)",
-            "es": "Bayas de chacruna (secas)"
-          }
-        },
-        {
-          "id": "Psychotria_Seeds",
-          "scientific": "Psychotria viridis",
-          "names": {
-            "pt-BR": "Sementes de chacrona",
-            "en": "Chacruna seeds",
-            "es": "Semillas de chacruna"
-          }
-        }
-      ]
-    },
-    {
       "key": "banisteriopsis",
       "commonNamePtBr": "mariri",
       "scientificName": "Banisteriopsis caapi",
@@ -803,43 +748,6 @@
       ]
     },
     {
-      "key": "palm_heart",
-      "commonNamePtBr": "palmito",
-      "scientificName": "Arecaceae sp.",
-      "confidence": "baixa_para_especie",
-      "taxonomicSynonym": "",
-      "gameIdentification": "",
-      "items": [
-        {
-          "id": "Palm_heart",
-          "scientific": "Arecaceae sp.",
-          "names": {
-            "pt-BR": "Palmito",
-            "en": "Heart of palm",
-            "es": "Palmito"
-          }
-        },
-        {
-          "id": "Palm_heart_Spoiled",
-          "scientific": "Arecaceae sp.",
-          "names": {
-            "pt-BR": "Palmito (estragado)",
-            "en": "Heart of palm (spoiled)",
-            "es": "Palmito (estropeado)"
-          }
-        },
-        {
-          "id": "Palm_Heart_dryed",
-          "scientific": "Arecaceae sp.",
-          "names": {
-            "pt-BR": "Palmito (seco)",
-            "en": "Heart of palm (dried)",
-            "es": "Palmito (seco)"
-          }
-        }
-      ]
-    },
-    {
       "key": "phallus_indusiatus",
       "commonNamePtBr": "véu-de-noiva",
       "scientificName": "Phallus indusiatus",
@@ -1020,6 +928,43 @@
             "pt-BR": "Taça-escarlate (estragada)",
             "en": "Scarlet cup mushroom (spoiled)",
             "es": "Hongo copa escarlata (estropeado)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "marasmius_haematocephalus",
+      "commonNamePtBr": "capota-rosa",
+      "scientificName": "Marasmius haematocephalus",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "Unknown Mushroom 7",
+      "items": [
+        {
+          "id": "marasmius_haematocephalus",
+          "scientific": "Marasmius haematocephalus",
+          "names": {
+            "pt-BR": "Capota-rosa",
+            "en": "Mauve parachute",
+            "es": "Marasmius morado"
+          }
+        },
+        {
+          "id": "marasmius_haematocephalus_Dryed",
+          "scientific": "Marasmius haematocephalus",
+          "names": {
+            "pt-BR": "Capota-rosa (seca)",
+            "en": "Mauve parachute (dried)",
+            "es": "Marasmius morado (seco)"
+          }
+        },
+        {
+          "id": "marasmius_haematocephalus_Spoiled",
+          "scientific": "Marasmius haematocephalus",
+          "names": {
+            "pt-BR": "Capota-rosa (estragada)",
+            "en": "Mauve parachute (spoiled)",
+            "es": "Marasmius morado (estropeado)"
           }
         }
       ]

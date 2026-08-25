@@ -123,7 +123,7 @@ public class BotanicaDescoberta : Mod {
         Debug.Log("[Botany Discovery] " + Version + " | Green Hell " +
             (string.IsNullOrEmpty(detectedGameVersion) ? "unknown" : detectedGameVersion) +
             " | package target " + TargetGameVersion +
-            " | catalog " + BotanicaCatalog.Count + "/85 | language " + BotanicaLocalization.LanguageCode +
+            " | catalog " + BotanicaCatalog.Count + "/80 | language " + BotanicaLocalization.LanguageCode +
             " | display " + BotanicaSettings.DisplayMode + " | layout " + BotanicaSettings.LayoutMode +
             " | details " + OnOff(BotanicaSettings.ShowDetails) + " | font fit " +
             OnOff(BotanicaSettings.AdaptiveFont) + " | tracked " + BotanicaRuntime.TrackedTitles +

@@ -1,6 +1,12 @@
 2.0.0
 - Normalized all 25 botanical groups to one Brazilian common name and one scientific name.
 - Removed displayed taxonomic synonyms and alternative game identifications.
+- Renamed the Monstera deliciosa fruit to banana-ananás in PT-BR.
+- Renamed cubiu entries to tomate-de-índio in PT-BR.
+- Added the cave fever mushroom as capota-rosa (Marasmius haematocephalus),
+  expanding the catalog to 88 ItemIDs across 26 groups.
+- Removed native-known palmito and chacrona entries from the replacement catalog;
+  the focused catalog now contains 80 ItemIDs across 24 groups.
 - Fixed game-version diagnostics to use GreenHellGame.s_GameVersion while keeping
   modinfo.json gameVersion as the package compatibility target.
 - Rebuilt the catalog workflow around one validated JSON source.

@@ -16,6 +16,10 @@ internal static class BotanicaRuntime {
 
     private static readonly Dictionary<int, TextSnapshot> Snapshots =
         new Dictionary<int, TextSnapshot>();
+    private static readonly HashSet<string> ReportedUnknownItemIds =
+        new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+    private static readonly HashSet<string> ReportedMissingTexts =
+        new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
     private static int _titlesApplied;
     private static int _unknownItemIds;
@@ -30,11 +34,21 @@ internal static class BotanicaRuntime {
         BotanicaEntry entry;
         if (!BotanicaCatalog.TryGet(replacer.m_ItemID, out entry)) {
             _unknownItemIds++;
+            if (ReportedUnknownItemIds.Add(replacer.m_ItemID)) {
+                Debug.LogWarning("[Botany Discovery] Unknown notebook ItemID: " +
+                    replacer.m_ItemID + ".");
+            }
             return false;
         }
 
-        Text text = replacer.GetComponent<Text>();
-        if (text == null) return false;
+        Text text = ResolveText(replacer);
+        if (text == null) {
+            if (ReportedMissingTexts.Add(replacer.m_ItemID)) {
+                Debug.LogWarning("[Botany Discovery] Notebook title text not found for ItemID: " +
+                    replacer.m_ItemID + ".");
+            }
+            return false;
+        }
 
         int id = text.GetInstanceID();
         TextSnapshot snapshot;
@@ -112,6 +126,16 @@ internal static class BotanicaRuntime {
     internal static void ResetCounters() {
         _titlesApplied = 0;
         _unknownItemIds = 0;
+        ReportedUnknownItemIds.Clear();
+        ReportedMissingTexts.Clear();
+    }
+
+    private static Text ResolveText(NotepadPlantTitleReplacer replacer) {
+        Text text = replacer.GetComponent<Text>();
+        if (text != null) return text;
+        text = replacer.GetComponentInChildren<Text>(true);
+        if (text != null) return text;
+        return replacer.GetComponentInParent<Text>();
     }
 
     private static string BuildDisplay(BotanicaEntry entry) {

@@ -4,7 +4,7 @@ Botany Discovery enriches Green Hell notebook entries that the player has alread
 
 ## Version 2.0.0
 
-- 85 ItemIDs across 25 botanical species or groups.
+- 80 ItemIDs across 24 botanical species or groups.
 - Brazilian Portuguese, English and Spanish, with English fallback.
 - Persistent common, scientific, or combined display modes.
 - Inline, stacked, and compact layouts.

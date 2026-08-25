@@ -5,7 +5,7 @@ It does not unlock pages, reveal recipes, alter item effects, modify Green Hell 
 or transmit state over the cooperative network.
 
 FEATURES
-- 85 ItemIDs across 25 botanical species or groups.
+- 80 ItemIDs across 24 botanical species or groups.
 - Brazilian Portuguese, English and Spanish; English fallback.
 - Persistent common, scientific or combined display modes.
 - Inline, stacked and compact layouts.

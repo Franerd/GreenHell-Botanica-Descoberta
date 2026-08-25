@@ -4,12 +4,12 @@ internal static partial class BotanicaCatalog {
         Add(new Entry("Quassia_Amara_flowers", "Flor de quina", "Bitter quassia flower", "Flor de cuasia amarga", "Quassia amara", "quassia_amara", "alta", "", ""));
         Add(new Entry("Quassia_Amara_flowers_Dryed", "Flor de quina (seca)", "Bitter quassia flower (dried)", "Flor de cuasia amarga (seca)", "Quassia amara", "quassia_amara", "alta", "", ""));
         Add(new Entry("QuassiaAmara_Seeds", "Semente de quina", "Bitter quassia seed", "Semilla de cuasia amarga", "Quassia amara", "quassia_amara", "alta", "", ""));
-        Add(new Entry("Cocona_fruit", "Cubiu", "Cocona", "Cocona", "Solanum sessiliflorum", "cocona", "media_alta", "", ""));
-        Add(new Entry("Cocona_fruit_Spoiled", "Cubiu (estragado)", "Cocona (spoiled)", "Cocona (estropeado)", "Solanum sessiliflorum", "cocona", "media_alta", "", ""));
-        Add(new Entry("Cocona_Seeds", "Sementes de cubiu", "Cocona seeds", "Semillas de cocona", "Solanum sessiliflorum", "cocona", "media_alta", "", ""));
+        Add(new Entry("Cocona_fruit", "Tomate-de-índio", "Cocona", "Cocona", "Solanum sessiliflorum", "cocona", "media_alta", "", ""));
+        Add(new Entry("Cocona_fruit_Spoiled", "Tomate-de-índio (estragado)", "Cocona (spoiled)", "Cocona (estropeado)", "Solanum sessiliflorum", "cocona", "media_alta", "", ""));
+        Add(new Entry("Cocona_Seeds", "Sementes de tomate-de-índio", "Cocona seeds", "Semillas de cocona", "Solanum sessiliflorum", "cocona", "media_alta", "", ""));
         Add(new Entry("monstera_deliciosa_flower", "Flor de costela-de-adão", "Swiss cheese plant flower", "Flor de costilla de Adán", "Monstera deliciosa", "monstera_deliciosa", "alta", "", ""));
         Add(new Entry("monstera_deliciosa_flower_Dryed", "Flor de costela-de-adão (seca)", "Swiss cheese plant flower (dried)", "Flor de costilla de Adán (seca)", "Monstera deliciosa", "monstera_deliciosa", "alta", "", ""));
-        Add(new Entry("monstera_deliciosa_fruit", "Fruto de costela-de-adão", "Swiss cheese plant fruit", "Fruto de costilla de Adán", "Monstera deliciosa", "monstera_deliciosa", "alta", "", ""));
+        Add(new Entry("monstera_deliciosa_fruit", "Banana-ananás", "Swiss cheese plant fruit", "Fruto de costilla de Adán", "Monstera deliciosa", "monstera_deliciosa", "alta", "", ""));
         Add(new Entry("Monstera_Seeds", "Sementes de costela-de-adão", "Swiss cheese plant seeds", "Semillas de costilla de Adán", "Monstera deliciosa", "monstera_deliciosa", "alta", "", ""));
         Add(new Entry("Plantain_lily_leaf", "Folha de hosta", "Plantain lily leaf", "Hoja de hosta", "Hosta spp.", "plantain_lily", "alta_para_genero", "", ""));
         Add(new Entry("plantain_lilly_flowers", "Flor de hosta", "Plantain lily flower", "Flor de hosta", "Hosta spp.", "plantain_lily", "alta_para_genero", "", ""));
@@ -41,11 +41,6 @@ internal static partial class BotanicaCatalog {
         Add(new Entry("tobacco_flowers", "Flor de tabaco", "Tobacco flower", "Flor de tabaco", "Nicotiana tabacum", "tobacco", "alta", "", ""));
         Add(new Entry("tobacco_flowers_Dryed", "Flor de tabaco (seca)", "Tobacco flower (dried)", "Flor de tabaco (seca)", "Nicotiana tabacum", "tobacco", "alta", "", ""));
         Add(new Entry("Tobacco_Seeds", "Sementes de tabaco", "Tobacco seeds", "Semillas de tabaco", "Nicotiana tabacum", "tobacco", "alta", "", ""));
-        Add(new Entry("psychotria_viridis", "Folhas de chacrona", "Chacruna leaves", "Hojas de chacruna", "Psychotria viridis", "psychotria", "alta", "", ""));
-        Add(new Entry("psychotria_viridis_Dryed", "Folhas de chacrona (secas)", "Chacruna leaves (dried)", "Hojas de chacruna (secas)", "Psychotria viridis", "psychotria", "alta", "", ""));
-        Add(new Entry("psychotria_viridis_berries", "Bagas de chacrona", "Chacruna berries", "Bayas de chacruna", "Psychotria viridis", "psychotria", "alta", "", ""));
-        Add(new Entry("psychotria_viridis_berries_Dryed", "Bagas de chacrona (secas)", "Chacruna berries (dried)", "Bayas de chacruna (secas)", "Psychotria viridis", "psychotria", "alta", "", ""));
-        Add(new Entry("Psychotria_Seeds", "Sementes de chacrona", "Chacruna seeds", "Semillas de chacruna", "Psychotria viridis", "psychotria", "alta", "", ""));
         Add(new Entry("banisteriopsis_scraps", "Fragmentos de mariri", "Caapi vine scraps", "Fragmentos de liana caapi", "Banisteriopsis caapi", "banisteriopsis", "alta", "", ""));
         Add(new Entry("coca_leafs", "Folhas de coca", "Coca leaves", "Hojas de coca", "Erythroxylum coca", "coca", "alta", "", ""));
         Add(new Entry("Brazil_nut_whole", "Ouriço de castanha-do-brasil", "Brazil nut pod", "Cápsula de nuez de Brasil", "Bertholletia excelsa", "brazil_nut", "alta", "", ""));
@@ -68,9 +63,6 @@ internal static partial class BotanicaCatalog {
         Add(new Entry("Coconut_Shell_Flesh_Spoiled", "Meio coco com polpa (estragada)", "Coconut half with flesh (spoiled)", "Medio coco con pulpa (estropeada)", "Cocos nucifera", "coconut", "alta", "", ""));
         Add(new Entry("lily_flower", "Flor de ninfeia", "Water lily flower", "Flor de nenúfar", "Nymphaea spp.", "water_lily", "alta_para_genero", "", ""));
         Add(new Entry("Ficus_leaf", "Folha de figueira", "Fig leaf", "Hoja de higuera", "Ficus spp.", "ficus", "alta_para_genero", "", ""));
-        Add(new Entry("Palm_heart", "Palmito", "Heart of palm", "Palmito", "Arecaceae sp.", "palm_heart", "baixa_para_especie", "", ""));
-        Add(new Entry("Palm_heart_Spoiled", "Palmito (estragado)", "Heart of palm (spoiled)", "Palmito (estropeado)", "Arecaceae sp.", "palm_heart", "baixa_para_especie", "", ""));
-        Add(new Entry("Palm_Heart_dryed", "Palmito (seco)", "Heart of palm (dried)", "Palmito (seco)", "Arecaceae sp.", "palm_heart", "baixa_para_especie", "", ""));
         Add(new Entry("Phallus_indusiatus", "Cogumelo véu-de-noiva", "Veiled lady mushroom", "Hongo velo de novia", "Phallus indusiatus", "phallus_indusiatus", "alta", "", ""));
         Add(new Entry("Phallus_indusiatus_Dryed", "Cogumelo véu-de-noiva (seco)", "Veiled lady mushroom (dried)", "Hongo velo de novia (seco)", "Phallus indusiatus", "phallus_indusiatus", "alta", "", ""));
         Add(new Entry("Phallus_indusiatus_Spoiled", "Cogumelo véu-de-noiva (estragado)", "Veiled lady mushroom (spoiled)", "Hongo velo de novia (estropeado)", "Phallus indusiatus", "phallus_indusiatus", "alta", "", ""));
@@ -86,5 +78,8 @@ internal static partial class BotanicaCatalog {
         Add(new Entry("copa_hongo", "Taça-escarlate", "Scarlet cup mushroom", "Hongo copa escarlata", "Sarcoscypha coccinea", "copa_hongo", "alta", "", ""));
         Add(new Entry("copa_hongo_dryed", "Taça-escarlate (seca)", "Scarlet cup mushroom (dried)", "Hongo copa escarlata (seco)", "Sarcoscypha coccinea", "copa_hongo", "alta", "", ""));
         Add(new Entry("copa_hongo_Spoiled", "Taça-escarlate (estragada)", "Scarlet cup mushroom (spoiled)", "Hongo copa escarlata (estropeado)", "Sarcoscypha coccinea", "copa_hongo", "alta", "", ""));
+        Add(new Entry("marasmius_haematocephalus", "Capota-rosa", "Mauve parachute", "Marasmius morado", "Marasmius haematocephalus", "marasmius_haematocephalus", "alta", "", "Unknown Mushroom 7"));
+        Add(new Entry("marasmius_haematocephalus_Dryed", "Capota-rosa (seca)", "Mauve parachute (dried)", "Marasmius morado (seco)", "Marasmius haematocephalus", "marasmius_haematocephalus", "alta", "", "Unknown Mushroom 7"));
+        Add(new Entry("marasmius_haematocephalus_Spoiled", "Capota-rosa (estragada)", "Mauve parachute (spoiled)", "Marasmius morado (estropeado)", "Marasmius haematocephalus", "marasmius_haematocephalus", "alta", "", "Unknown Mushroom 7"));
     }
 }
