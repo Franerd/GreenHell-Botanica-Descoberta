@@ -134,16 +134,8 @@ internal static class BotanicaRuntime {
         if (BotanicaSettings.ShowDetails &&
             BotanicaSettings.LayoutMode != BotanicaLayoutMode.Compact) {
             title += "\n<color=#6f705f>" +
-                BotanicaLocalization.ConfidenceLabel(entry.Confidence);
-            if (!string.IsNullOrEmpty(entry.TaxonomicSynonym)) {
-                title += " · " + BotanicaLocalization.SynonymLabel + ": <i>" +
-                    entry.TaxonomicSynonym + "</i>";
-            }
-            if (!string.IsNullOrEmpty(entry.GameIdentification)) {
-                title += " · " + BotanicaLocalization.GameIdentificationLabel + ": " +
-                    entry.GameIdentification;
-            }
-            title += "</color>";
+                BotanicaLocalization.ConfidenceLabel(entry.Confidence) +
+                "</color>";
         }
         return title;
     }

@@ -11,7 +11,7 @@
   "species": [
     {
       "key": "quassia_amara",
-      "commonNamePtBr": "quássia-amarga",
+      "commonNamePtBr": "quina",
       "scientificName": "Quassia amara",
       "confidence": "alta",
       "taxonomicSynonym": "",
@@ -21,7 +21,7 @@
           "id": "Quassia_Amara_flowers",
           "scientific": "Quassia amara",
           "names": {
-            "pt-BR": "Flor de quássia-amarga",
+            "pt-BR": "Flor de quina",
             "en": "Bitter quassia flower",
             "es": "Flor de cuasia amarga"
           }
@@ -30,7 +30,7 @@
           "id": "Quassia_Amara_flowers_Dryed",
           "scientific": "Quassia amara",
           "names": {
-            "pt-BR": "Flor de quássia-amarga (seca)",
+            "pt-BR": "Flor de quina (seca)",
             "en": "Bitter quassia flower (dried)",
             "es": "Flor de cuasia amarga (seca)"
           }
@@ -39,7 +39,7 @@
           "id": "QuassiaAmara_Seeds",
           "scientific": "Quassia amara",
           "names": {
-            "pt-BR": "Semente de quássia-amarga",
+            "pt-BR": "Semente de quina",
             "en": "Bitter quassia seed",
             "es": "Semilla de cuasia amarga"
           }
@@ -48,7 +48,7 @@
     },
     {
       "key": "cocona",
-      "commonNamePtBr": "maná-cubiu / tomate-de-índio",
+      "commonNamePtBr": "cubiu",
       "scientificName": "Solanum sessiliflorum",
       "confidence": "media_alta",
       "taxonomicSynonym": "",
@@ -58,25 +58,25 @@
           "id": "Cocona_fruit",
           "scientific": "Solanum sessiliflorum",
           "names": {
-            "pt-BR": "Maná-cubiu / tomate-de-índio",
-            "en": "Cocona / Indian tomato",
-            "es": "Cocona / tomate de indio"
+            "pt-BR": "Cubiu",
+            "en": "Cocona",
+            "es": "Cocona"
           }
         },
         {
           "id": "Cocona_fruit_Spoiled",
           "scientific": "Solanum sessiliflorum",
           "names": {
-            "pt-BR": "Maná-cubiu / tomate-de-índio (estragado)",
-            "en": "Cocona / Indian tomato (spoiled)",
-            "es": "Cocona / tomate de indio (estropeado)"
+            "pt-BR": "Cubiu (estragado)",
+            "en": "Cocona (spoiled)",
+            "es": "Cocona (estropeado)"
           }
         },
         {
           "id": "Cocona_Seeds",
           "scientific": "Solanum sessiliflorum",
           "names": {
-            "pt-BR": "Sementes de maná-cubiu",
+            "pt-BR": "Sementes de cubiu",
             "en": "Cocona seeds",
             "es": "Semillas de cocona"
           }
@@ -113,9 +113,9 @@
           "id": "monstera_deliciosa_fruit",
           "scientific": "Monstera deliciosa",
           "names": {
-            "pt-BR": "Banana-ananás (fruto da costela-de-adão)",
-            "en": "Ceriman (Swiss cheese plant fruit)",
-            "es": "Piñanona (fruto de costilla de Adán)"
+            "pt-BR": "Fruto de costela-de-adão",
+            "en": "Swiss cheese plant fruit",
+            "es": "Fruto de costilla de Adán"
           }
         },
         {
@@ -131,7 +131,7 @@
     },
     {
       "key": "plantain_lily",
-      "commonNamePtBr": "hosta / funkia",
+      "commonNamePtBr": "hosta",
       "scientificName": "Hosta spp.",
       "confidence": "alta_para_genero",
       "taxonomicSynonym": "",
@@ -141,7 +141,7 @@
           "id": "Plantain_lily_leaf",
           "scientific": "Hosta spp.",
           "names": {
-            "pt-BR": "Folha de hosta / funkia",
+            "pt-BR": "Folha de hosta",
             "en": "Plantain lily leaf",
             "es": "Hoja de hosta"
           }
@@ -150,7 +150,7 @@
           "id": "plantain_lilly_flowers",
           "scientific": "Hosta spp.",
           "names": {
-            "pt-BR": "Flor de hosta / funkia",
+            "pt-BR": "Flor de hosta",
             "en": "Plantain lily flower",
             "es": "Flor de hosta"
           }
@@ -159,7 +159,7 @@
           "id": "plantain_lilly_flowers_Dryed",
           "scientific": "Hosta spp.",
           "names": {
-            "pt-BR": "Flor de hosta / funkia (seca)",
+            "pt-BR": "Flor de hosta (seca)",
             "en": "Plantain lily flower (dried)",
             "es": "Flor de hosta (seca)"
           }
@@ -168,7 +168,7 @@
           "id": "PlantainLilly_Seeds",
           "scientific": "Hosta spp.",
           "names": {
-            "pt-BR": "Propágulo de hosta / funkia",
+            "pt-BR": "Propágulo de hosta",
             "en": "Plantain lily propagule",
             "es": "Propágulo de hosta"
           }
@@ -177,7 +177,7 @@
     },
     {
       "key": "guanabana",
-      "commonNamePtBr": "graviola / guanábana",
+      "commonNamePtBr": "graviola",
       "scientificName": "Annona muricata",
       "confidence": "alta",
       "taxonomicSynonym": "",
@@ -187,7 +187,7 @@
           "id": "Guanabana_Fruit",
           "scientific": "Annona muricata",
           "names": {
-            "pt-BR": "Graviola / guanábana",
+            "pt-BR": "Graviola",
             "en": "Soursop",
             "es": "Guanábana"
           }
@@ -196,7 +196,7 @@
           "id": "Guanabana_Fruit_Spoiled",
           "scientific": "Annona muricata",
           "names": {
-            "pt-BR": "Graviola / guanábana (estragada)",
+            "pt-BR": "Graviola (estragada)",
             "en": "Soursop (spoiled)",
             "es": "Guanábana (estropeada)"
           }
@@ -214,7 +214,7 @@
     },
     {
       "key": "malanga",
-      "commonNamePtBr": "malanga",
+      "commonNamePtBr": "taioba",
       "scientificName": "Xanthosoma spp.",
       "confidence": "alta_para_genero",
       "taxonomicSynonym": "",
@@ -224,7 +224,7 @@
           "id": "Malanga_bulb",
           "scientific": "Xanthosoma spp.",
           "names": {
-            "pt-BR": "Cormo de malanga",
+            "pt-BR": "Cormo de taioba",
             "en": "Malanga corm",
             "es": "Cormo de malanga"
           }
@@ -233,7 +233,7 @@
           "id": "Malanga_bulb_cooked",
           "scientific": "Xanthosoma spp.",
           "names": {
-            "pt-BR": "Cormo de malanga (cozido)",
+            "pt-BR": "Cormo de taioba (cozido)",
             "en": "Malanga corm (cooked)",
             "es": "Cormo de malanga (cocido)"
           }
@@ -242,7 +242,7 @@
           "id": "Malanga_bulb_Spoiled",
           "scientific": "Xanthosoma spp.",
           "names": {
-            "pt-BR": "Cormo de malanga (estragado)",
+            "pt-BR": "Cormo de taioba (estragado)",
             "en": "Malanga corm (spoiled)",
             "es": "Cormo de malanga (estropeado)"
           }
@@ -251,7 +251,7 @@
           "id": "Malanga_Bulb_dryed",
           "scientific": "Xanthosoma spp.",
           "names": {
-            "pt-BR": "Cormo de malanga (seco)",
+            "pt-BR": "Cormo de taioba (seco)",
             "en": "Malanga corm (dried)",
             "es": "Cormo de malanga (seco)"
           }
@@ -260,7 +260,7 @@
           "id": "Malanga_Seeds",
           "scientific": "Xanthosoma spp.",
           "names": {
-            "pt-BR": "Raiz de malanga para plantio",
+            "pt-BR": "Raiz de taioba para plantio",
             "en": "Malanga root for planting",
             "es": "Raíz de malanga para plantar"
           }
@@ -324,7 +324,7 @@
     },
     {
       "key": "albahaca",
-      "commonNamePtBr": "manjericão-de-folha-larga",
+      "commonNamePtBr": "manjericão",
       "scientificName": "Ocimum basilicum",
       "confidence": "media",
       "taxonomicSynonym": "",
@@ -334,7 +334,7 @@
           "id": "Albahaca_Leaf",
           "scientific": "Ocimum basilicum",
           "names": {
-            "pt-BR": "Folha de manjericão-de-folha-larga",
+            "pt-BR": "Folha de manjericão",
             "en": "Broadleaf basil leaf",
             "es": "Hoja de albahaca de hoja ancha"
           }
@@ -343,7 +343,7 @@
           "id": "Albahaca_Flower",
           "scientific": "Ocimum basilicum",
           "names": {
-            "pt-BR": "Flor de manjericão-de-folha-larga",
+            "pt-BR": "Flor de manjericão",
             "en": "Broadleaf basil flower",
             "es": "Flor de albahaca de hoja ancha"
           }
@@ -352,7 +352,7 @@
           "id": "Albahaca_flower_Dryed",
           "scientific": "Ocimum basilicum",
           "names": {
-            "pt-BR": "Flor de manjericão-de-folha-larga (seca)",
+            "pt-BR": "Flor de manjericão (seca)",
             "en": "Broadleaf basil flower (dried)",
             "es": "Flor de albahaca de hoja ancha (seca)"
           }
@@ -361,7 +361,7 @@
           "id": "Albahaca_Seeds",
           "scientific": "Ocimum basilicum",
           "names": {
-            "pt-BR": "Sementes de manjericão-de-folha-larga",
+            "pt-BR": "Sementes de manjericão",
             "en": "Broadleaf basil seeds",
             "es": "Semillas de albahaca de hoja ancha"
           }
@@ -370,7 +370,7 @@
     },
     {
       "key": "molineria",
-      "commonNamePtBr": "molineria",
+      "commonNamePtBr": "curculigo",
       "scientificName": "Molineria capitulata",
       "confidence": "media",
       "taxonomicSynonym": "Curculigo capitulata",
@@ -380,7 +380,7 @@
           "id": "Molineria_leaf",
           "scientific": "Molineria capitulata",
           "names": {
-            "pt-BR": "Folha de molineria",
+            "pt-BR": "Folha de curculigo",
             "en": "Molineria leaf",
             "es": "Hoja de molineria"
           }
@@ -389,7 +389,7 @@
           "id": "molineria_flowers",
           "scientific": "Molineria capitulata",
           "names": {
-            "pt-BR": "Flor de molineria",
+            "pt-BR": "Flor de curculigo",
             "en": "Molineria flower",
             "es": "Flor de molineria"
           }
@@ -398,7 +398,7 @@
           "id": "molineria_flowers_Dryed",
           "scientific": "Molineria capitulata",
           "names": {
-            "pt-BR": "Flor de molineria (seca)",
+            "pt-BR": "Flor de curculigo (seca)",
             "en": "Molineria flower (dried)",
             "es": "Flor de molineria (seca)"
           }
@@ -407,7 +407,7 @@
           "id": "Molineria_Seeds",
           "scientific": "Molineria capitulata",
           "names": {
-            "pt-BR": "Propágulo de molineria",
+            "pt-BR": "Propágulo de curculigo",
             "en": "Molineria propagule",
             "es": "Propágulo de molineria"
           }
@@ -471,7 +471,7 @@
     },
     {
       "key": "psychotria",
-      "commonNamePtBr": "chacrona / psychotria",
+      "commonNamePtBr": "chacrona",
       "scientificName": "Psychotria viridis",
       "confidence": "alta",
       "taxonomicSynonym": "",
@@ -499,7 +499,7 @@
           "id": "psychotria_viridis_berries",
           "scientific": "Psychotria viridis",
           "names": {
-            "pt-BR": "Bagas de psychotria",
+            "pt-BR": "Bagas de chacrona",
             "en": "Chacruna berries",
             "es": "Bayas de chacruna"
           }
@@ -508,7 +508,7 @@
           "id": "psychotria_viridis_berries_Dryed",
           "scientific": "Psychotria viridis",
           "names": {
-            "pt-BR": "Bagas de psychotria (secas)",
+            "pt-BR": "Bagas de chacrona (secas)",
             "en": "Chacruna berries (dried)",
             "es": "Bayas de chacruna (secas)"
           }
@@ -517,7 +517,7 @@
           "id": "Psychotria_Seeds",
           "scientific": "Psychotria viridis",
           "names": {
-            "pt-BR": "Sementes de psychotria",
+            "pt-BR": "Sementes de chacrona",
             "en": "Chacruna seeds",
             "es": "Semillas de chacruna"
           }
@@ -526,7 +526,7 @@
     },
     {
       "key": "banisteriopsis",
-      "commonNamePtBr": "mariri / cipó-caapi",
+      "commonNamePtBr": "mariri",
       "scientificName": "Banisteriopsis caapi",
       "confidence": "alta",
       "taxonomicSynonym": "",
@@ -536,7 +536,7 @@
           "id": "banisteriopsis_scraps",
           "scientific": "Banisteriopsis caapi",
           "names": {
-            "pt-BR": "Fragmentos de mariri / cipó-caapi",
+            "pt-BR": "Fragmentos de mariri",
             "en": "Caapi vine scraps",
             "es": "Fragmentos de liana caapi"
           }
@@ -564,7 +564,7 @@
     },
     {
       "key": "brazil_nut",
-      "commonNamePtBr": "castanha-do-pará",
+      "commonNamePtBr": "castanha-do-brasil",
       "scientificName": "Bertholletia excelsa",
       "confidence": "alta",
       "taxonomicSynonym": "",
@@ -574,7 +574,7 @@
           "id": "Brazil_nut_whole",
           "scientific": "Bertholletia excelsa",
           "names": {
-            "pt-BR": "Ouriço de castanha-do-pará",
+            "pt-BR": "Ouriço de castanha-do-brasil",
             "en": "Brazil nut pod",
             "es": "Cápsula de nuez de Brasil"
           }
@@ -583,7 +583,7 @@
           "id": "Brazil_nut",
           "scientific": "Bertholletia excelsa",
           "names": {
-            "pt-BR": "Castanha-do-pará",
+            "pt-BR": "Castanha-do-brasil",
             "en": "Brazil nut",
             "es": "Nuez de Brasil"
           }
@@ -592,7 +592,7 @@
           "id": "Brazil_nut_Spoiled",
           "scientific": "Bertholletia excelsa",
           "names": {
-            "pt-BR": "Castanha-do-pará (estragada)",
+            "pt-BR": "Castanha-do-brasil (estragada)",
             "en": "Brazil nut (spoiled)",
             "es": "Nuez de Brasil (estropeada)"
           }
@@ -601,7 +601,7 @@
           "id": "Brazilian_Seeds",
           "scientific": "Bertholletia excelsa",
           "names": {
-            "pt-BR": "Castanha-do-pará para plantio",
+            "pt-BR": "Castanha-do-brasil para plantio",
             "en": "Brazil nut for planting",
             "es": "Nuez de Brasil para plantar"
           }
@@ -610,7 +610,7 @@
     },
     {
       "key": "raffia",
-      "commonNamePtBr": "palmeira-ráfia",
+      "commonNamePtBr": "ráfia",
       "scientificName": "Raphia spp.",
       "confidence": "alta_para_genero",
       "taxonomicSynonym": "",
@@ -620,7 +620,7 @@
           "id": "Raffia_nut",
           "scientific": "Raphia spp.",
           "names": {
-            "pt-BR": "Fruto de palmeira-ráfia",
+            "pt-BR": "Fruto de ráfia",
             "en": "Raffia palm fruit",
             "es": "Fruto de palmera rafia"
           }
@@ -629,7 +629,7 @@
           "id": "Raffia_nut_Spoiled",
           "scientific": "Raphia spp.",
           "names": {
-            "pt-BR": "Fruto de palmeira-ráfia (estragado)",
+            "pt-BR": "Fruto de ráfia (estragado)",
             "en": "Raffia palm fruit (spoiled)",
             "es": "Fruto de palmera rafia (estropeado)"
           }
@@ -638,7 +638,7 @@
           "id": "Raffia_Seeds",
           "scientific": "Raphia spp.",
           "names": {
-            "pt-BR": "Semente de palmeira-ráfia",
+            "pt-BR": "Semente de ráfia",
             "en": "Raffia palm seed",
             "es": "Semilla de palmera rafia"
           }
@@ -766,7 +766,7 @@
     },
     {
       "key": "water_lily",
-      "commonNamePtBr": "nenúfar",
+      "commonNamePtBr": "ninfeia",
       "scientificName": "Nymphaea spp.",
       "confidence": "alta_para_genero",
       "taxonomicSynonym": "",
@@ -776,7 +776,7 @@
           "id": "lily_flower",
           "scientific": "Nymphaea spp.",
           "names": {
-            "pt-BR": "Flor de nenúfar",
+            "pt-BR": "Flor de ninfeia",
             "en": "Water lily flower",
             "es": "Flor de nenúfar"
           }
@@ -804,7 +804,7 @@
     },
     {
       "key": "palm_heart",
-      "commonNamePtBr": "palmeira produtora de palmito",
+      "commonNamePtBr": "palmito",
       "scientificName": "Arecaceae sp.",
       "confidence": "baixa_para_especie",
       "taxonomicSynonym": "",
@@ -841,7 +841,7 @@
     },
     {
       "key": "phallus_indusiatus",
-      "commonNamePtBr": "cogumelo véu-de-noiva",
+      "commonNamePtBr": "véu-de-noiva",
       "scientificName": "Phallus indusiatus",
       "confidence": "alta",
       "taxonomicSynonym": "",
@@ -989,7 +989,7 @@
     },
     {
       "key": "copa_hongo",
-      "commonNamePtBr": "taça-escarlate / cogumelo-de-copa",
+      "commonNamePtBr": "taça-escarlate",
       "scientificName": "Sarcoscypha coccinea",
       "confidence": "alta",
       "taxonomicSynonym": "",
@@ -999,7 +999,7 @@
           "id": "copa_hongo",
           "scientific": "Sarcoscypha coccinea",
           "names": {
-            "pt-BR": "Cogumelo-de-copa / taça-escarlate",
+            "pt-BR": "Taça-escarlate",
             "en": "Scarlet cup mushroom",
             "es": "Hongo copa escarlata"
           }
@@ -1008,7 +1008,7 @@
           "id": "copa_hongo_dryed",
           "scientific": "Sarcoscypha coccinea",
           "names": {
-            "pt-BR": "Cogumelo-de-copa / taça-escarlate (seco)",
+            "pt-BR": "Taça-escarlate (seca)",
             "en": "Scarlet cup mushroom (dried)",
             "es": "Hongo copa escarlata (seco)"
           }
@@ -1017,7 +1017,7 @@
           "id": "copa_hongo_Spoiled",
           "scientific": "Sarcoscypha coccinea",
           "names": {
-            "pt-BR": "Cogumelo-de-copa / taça-escarlate (estragado)",
+            "pt-BR": "Taça-escarlate (estragada)",
             "en": "Scarlet cup mushroom (spoiled)",
             "es": "Hongo copa escarlata (estropeado)"
           }
