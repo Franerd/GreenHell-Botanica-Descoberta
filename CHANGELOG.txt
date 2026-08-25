@@ -1,0 +1,12 @@
+2.0.0
+- Fixed game-version diagnostics to use GreenHellGame.s_GameVersion while keeping
+  modinfo.json gameVersion as the package compatibility target.
+- Rebuilt the catalog workflow around one validated JSON source.
+- Added persistent display, layout, language, detail and font-fit preferences.
+- Added italic scientific names, stacked/compact layouts and confidence notes.
+- Added automatic refresh after Green Hell applies a language.
+- Scoped normal notebook refreshes to the active Plants tab.
+- Added idempotent loading, patch-target diagnostics and version warnings.
+- Added full restoration of native title text and layout settings on unload.
+- Preserved local-only cooperative behavior and normal notebook discovery.
+- Added build-time validation and a complete in-game test matrix.

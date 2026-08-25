@@ -1,0 +1,1028 @@
+{
+  "schema": 2,
+  "catalogVersion": "2.0.0",
+  "gameVersion": "2.9.5",
+  "defaultLanguage": "en",
+  "languages": [
+    "pt-BR",
+    "en",
+    "es"
+  ],
+  "species": [
+    {
+      "key": "quassia_amara",
+      "commonNamePtBr": "quássia-amarga",
+      "scientificName": "Quassia amara",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Quassia_Amara_flowers",
+          "scientific": "Quassia amara",
+          "names": {
+            "pt-BR": "Flor de quássia-amarga",
+            "en": "Bitter quassia flower",
+            "es": "Flor de cuasia amarga"
+          }
+        },
+        {
+          "id": "Quassia_Amara_flowers_Dryed",
+          "scientific": "Quassia amara",
+          "names": {
+            "pt-BR": "Flor de quássia-amarga (seca)",
+            "en": "Bitter quassia flower (dried)",
+            "es": "Flor de cuasia amarga (seca)"
+          }
+        },
+        {
+          "id": "QuassiaAmara_Seeds",
+          "scientific": "Quassia amara",
+          "names": {
+            "pt-BR": "Semente de quássia-amarga",
+            "en": "Bitter quassia seed",
+            "es": "Semilla de cuasia amarga"
+          }
+        }
+      ]
+    },
+    {
+      "key": "cocona",
+      "commonNamePtBr": "maná-cubiu / tomate-de-índio",
+      "scientificName": "Solanum sessiliflorum",
+      "confidence": "media_alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Cocona_fruit",
+          "scientific": "Solanum sessiliflorum",
+          "names": {
+            "pt-BR": "Maná-cubiu / tomate-de-índio",
+            "en": "Cocona / Indian tomato",
+            "es": "Cocona / tomate de indio"
+          }
+        },
+        {
+          "id": "Cocona_fruit_Spoiled",
+          "scientific": "Solanum sessiliflorum",
+          "names": {
+            "pt-BR": "Maná-cubiu / tomate-de-índio (estragado)",
+            "en": "Cocona / Indian tomato (spoiled)",
+            "es": "Cocona / tomate de indio (estropeado)"
+          }
+        },
+        {
+          "id": "Cocona_Seeds",
+          "scientific": "Solanum sessiliflorum",
+          "names": {
+            "pt-BR": "Sementes de maná-cubiu",
+            "en": "Cocona seeds",
+            "es": "Semillas de cocona"
+          }
+        }
+      ]
+    },
+    {
+      "key": "monstera_deliciosa",
+      "commonNamePtBr": "costela-de-adão",
+      "scientificName": "Monstera deliciosa",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "monstera_deliciosa_flower",
+          "scientific": "Monstera deliciosa",
+          "names": {
+            "pt-BR": "Flor de costela-de-adão",
+            "en": "Swiss cheese plant flower",
+            "es": "Flor de costilla de Adán"
+          }
+        },
+        {
+          "id": "monstera_deliciosa_flower_Dryed",
+          "scientific": "Monstera deliciosa",
+          "names": {
+            "pt-BR": "Flor de costela-de-adão (seca)",
+            "en": "Swiss cheese plant flower (dried)",
+            "es": "Flor de costilla de Adán (seca)"
+          }
+        },
+        {
+          "id": "monstera_deliciosa_fruit",
+          "scientific": "Monstera deliciosa",
+          "names": {
+            "pt-BR": "Banana-ananás (fruto da costela-de-adão)",
+            "en": "Ceriman (Swiss cheese plant fruit)",
+            "es": "Piñanona (fruto de costilla de Adán)"
+          }
+        },
+        {
+          "id": "Monstera_Seeds",
+          "scientific": "Monstera deliciosa",
+          "names": {
+            "pt-BR": "Sementes de costela-de-adão",
+            "en": "Swiss cheese plant seeds",
+            "es": "Semillas de costilla de Adán"
+          }
+        }
+      ]
+    },
+    {
+      "key": "plantain_lily",
+      "commonNamePtBr": "hosta / funkia",
+      "scientificName": "Hosta spp.",
+      "confidence": "alta_para_genero",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Plantain_lily_leaf",
+          "scientific": "Hosta spp.",
+          "names": {
+            "pt-BR": "Folha de hosta / funkia",
+            "en": "Plantain lily leaf",
+            "es": "Hoja de hosta"
+          }
+        },
+        {
+          "id": "plantain_lilly_flowers",
+          "scientific": "Hosta spp.",
+          "names": {
+            "pt-BR": "Flor de hosta / funkia",
+            "en": "Plantain lily flower",
+            "es": "Flor de hosta"
+          }
+        },
+        {
+          "id": "plantain_lilly_flowers_Dryed",
+          "scientific": "Hosta spp.",
+          "names": {
+            "pt-BR": "Flor de hosta / funkia (seca)",
+            "en": "Plantain lily flower (dried)",
+            "es": "Flor de hosta (seca)"
+          }
+        },
+        {
+          "id": "PlantainLilly_Seeds",
+          "scientific": "Hosta spp.",
+          "names": {
+            "pt-BR": "Propágulo de hosta / funkia",
+            "en": "Plantain lily propagule",
+            "es": "Propágulo de hosta"
+          }
+        }
+      ]
+    },
+    {
+      "key": "guanabana",
+      "commonNamePtBr": "graviola / guanábana",
+      "scientificName": "Annona muricata",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Guanabana_Fruit",
+          "scientific": "Annona muricata",
+          "names": {
+            "pt-BR": "Graviola / guanábana",
+            "en": "Soursop",
+            "es": "Guanábana"
+          }
+        },
+        {
+          "id": "Guanabana_Fruit_Spoiled",
+          "scientific": "Annona muricata",
+          "names": {
+            "pt-BR": "Graviola / guanábana (estragada)",
+            "en": "Soursop (spoiled)",
+            "es": "Guanábana (estropeada)"
+          }
+        },
+        {
+          "id": "Guanabana_Seeds",
+          "scientific": "Annona muricata",
+          "names": {
+            "pt-BR": "Sementes de graviola",
+            "en": "Soursop seeds",
+            "es": "Semillas de guanábana"
+          }
+        }
+      ]
+    },
+    {
+      "key": "malanga",
+      "commonNamePtBr": "malanga",
+      "scientificName": "Xanthosoma spp.",
+      "confidence": "alta_para_genero",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Malanga_bulb",
+          "scientific": "Xanthosoma spp.",
+          "names": {
+            "pt-BR": "Cormo de malanga",
+            "en": "Malanga corm",
+            "es": "Cormo de malanga"
+          }
+        },
+        {
+          "id": "Malanga_bulb_cooked",
+          "scientific": "Xanthosoma spp.",
+          "names": {
+            "pt-BR": "Cormo de malanga (cozido)",
+            "en": "Malanga corm (cooked)",
+            "es": "Cormo de malanga (cocido)"
+          }
+        },
+        {
+          "id": "Malanga_bulb_Spoiled",
+          "scientific": "Xanthosoma spp.",
+          "names": {
+            "pt-BR": "Cormo de malanga (estragado)",
+            "en": "Malanga corm (spoiled)",
+            "es": "Cormo de malanga (estropeado)"
+          }
+        },
+        {
+          "id": "Malanga_Bulb_dryed",
+          "scientific": "Xanthosoma spp.",
+          "names": {
+            "pt-BR": "Cormo de malanga (seco)",
+            "en": "Malanga corm (dried)",
+            "es": "Cormo de malanga (seco)"
+          }
+        },
+        {
+          "id": "Malanga_Seeds",
+          "scientific": "Xanthosoma spp.",
+          "names": {
+            "pt-BR": "Raiz de malanga para plantio",
+            "en": "Malanga root for planting",
+            "es": "Raíz de malanga para plantar"
+          }
+        }
+      ]
+    },
+    {
+      "key": "cassava",
+      "commonNamePtBr": "mandioca",
+      "scientificName": "Manihot esculenta",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Cassava_bulb",
+          "scientific": "Manihot esculenta",
+          "names": {
+            "pt-BR": "Raiz de mandioca",
+            "en": "Cassava root",
+            "es": "Raíz de yuca"
+          }
+        },
+        {
+          "id": "Cassava_bulb_Cooked",
+          "scientific": "Manihot esculenta",
+          "names": {
+            "pt-BR": "Raiz de mandioca (cozida)",
+            "en": "Cassava root (cooked)",
+            "es": "Raíz de yuca (cocida)"
+          }
+        },
+        {
+          "id": "Cassava_bulb_Spoiled",
+          "scientific": "Manihot esculenta",
+          "names": {
+            "pt-BR": "Raiz de mandioca (estragada)",
+            "en": "Cassava root (spoiled)",
+            "es": "Raíz de yuca (estropeada)"
+          }
+        },
+        {
+          "id": "Cassava_bulb_dryed",
+          "scientific": "Manihot esculenta",
+          "names": {
+            "pt-BR": "Raiz de mandioca (seca)",
+            "en": "Cassava root (dried)",
+            "es": "Raíz de yuca (seca)"
+          }
+        },
+        {
+          "id": "Casava_Seeds",
+          "scientific": "Manihot esculenta",
+          "names": {
+            "pt-BR": "Raiz de mandioca para plantio",
+            "en": "Cassava root for planting",
+            "es": "Raíz de yuca para plantar"
+          }
+        }
+      ]
+    },
+    {
+      "key": "albahaca",
+      "commonNamePtBr": "manjericão-de-folha-larga",
+      "scientificName": "Ocimum basilicum",
+      "confidence": "media",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Albahaca_Leaf",
+          "scientific": "Ocimum basilicum",
+          "names": {
+            "pt-BR": "Folha de manjericão-de-folha-larga",
+            "en": "Broadleaf basil leaf",
+            "es": "Hoja de albahaca de hoja ancha"
+          }
+        },
+        {
+          "id": "Albahaca_Flower",
+          "scientific": "Ocimum basilicum",
+          "names": {
+            "pt-BR": "Flor de manjericão-de-folha-larga",
+            "en": "Broadleaf basil flower",
+            "es": "Flor de albahaca de hoja ancha"
+          }
+        },
+        {
+          "id": "Albahaca_flower_Dryed",
+          "scientific": "Ocimum basilicum",
+          "names": {
+            "pt-BR": "Flor de manjericão-de-folha-larga (seca)",
+            "en": "Broadleaf basil flower (dried)",
+            "es": "Flor de albahaca de hoja ancha (seca)"
+          }
+        },
+        {
+          "id": "Albahaca_Seeds",
+          "scientific": "Ocimum basilicum",
+          "names": {
+            "pt-BR": "Sementes de manjericão-de-folha-larga",
+            "en": "Broadleaf basil seeds",
+            "es": "Semillas de albahaca de hoja ancha"
+          }
+        }
+      ]
+    },
+    {
+      "key": "molineria",
+      "commonNamePtBr": "molineria",
+      "scientificName": "Molineria capitulata",
+      "confidence": "media",
+      "taxonomicSynonym": "Curculigo capitulata",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Molineria_leaf",
+          "scientific": "Molineria capitulata",
+          "names": {
+            "pt-BR": "Folha de molineria",
+            "en": "Molineria leaf",
+            "es": "Hoja de molineria"
+          }
+        },
+        {
+          "id": "molineria_flowers",
+          "scientific": "Molineria capitulata",
+          "names": {
+            "pt-BR": "Flor de molineria",
+            "en": "Molineria flower",
+            "es": "Flor de molineria"
+          }
+        },
+        {
+          "id": "molineria_flowers_Dryed",
+          "scientific": "Molineria capitulata",
+          "names": {
+            "pt-BR": "Flor de molineria (seca)",
+            "en": "Molineria flower (dried)",
+            "es": "Flor de molineria (seca)"
+          }
+        },
+        {
+          "id": "Molineria_Seeds",
+          "scientific": "Molineria capitulata",
+          "names": {
+            "pt-BR": "Propágulo de molineria",
+            "en": "Molineria propagule",
+            "es": "Propágulo de molineria"
+          }
+        }
+      ]
+    },
+    {
+      "key": "tobacco",
+      "commonNamePtBr": "tabaco",
+      "scientificName": "Nicotiana tabacum",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Tobacco_Leaf",
+          "scientific": "Nicotiana tabacum",
+          "names": {
+            "pt-BR": "Folha de tabaco",
+            "en": "Tobacco leaf",
+            "es": "Hoja de tabaco"
+          }
+        },
+        {
+          "id": "Dryed_Tobacco_Leaf",
+          "scientific": "Nicotiana tabacum",
+          "names": {
+            "pt-BR": "Folha de tabaco (seca)",
+            "en": "Tobacco leaf (dried)",
+            "es": "Hoja de tabaco (seca)"
+          }
+        },
+        {
+          "id": "tobacco_flowers",
+          "scientific": "Nicotiana tabacum",
+          "names": {
+            "pt-BR": "Flor de tabaco",
+            "en": "Tobacco flower",
+            "es": "Flor de tabaco"
+          }
+        },
+        {
+          "id": "tobacco_flowers_Dryed",
+          "scientific": "Nicotiana tabacum",
+          "names": {
+            "pt-BR": "Flor de tabaco (seca)",
+            "en": "Tobacco flower (dried)",
+            "es": "Flor de tabaco (seca)"
+          }
+        },
+        {
+          "id": "Tobacco_Seeds",
+          "scientific": "Nicotiana tabacum",
+          "names": {
+            "pt-BR": "Sementes de tabaco",
+            "en": "Tobacco seeds",
+            "es": "Semillas de tabaco"
+          }
+        }
+      ]
+    },
+    {
+      "key": "psychotria",
+      "commonNamePtBr": "chacrona / psychotria",
+      "scientificName": "Psychotria viridis",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "psychotria_viridis",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Folhas de chacrona",
+            "en": "Chacruna leaves",
+            "es": "Hojas de chacruna"
+          }
+        },
+        {
+          "id": "psychotria_viridis_Dryed",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Folhas de chacrona (secas)",
+            "en": "Chacruna leaves (dried)",
+            "es": "Hojas de chacruna (secas)"
+          }
+        },
+        {
+          "id": "psychotria_viridis_berries",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Bagas de psychotria",
+            "en": "Chacruna berries",
+            "es": "Bayas de chacruna"
+          }
+        },
+        {
+          "id": "psychotria_viridis_berries_Dryed",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Bagas de psychotria (secas)",
+            "en": "Chacruna berries (dried)",
+            "es": "Bayas de chacruna (secas)"
+          }
+        },
+        {
+          "id": "Psychotria_Seeds",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Sementes de psychotria",
+            "en": "Chacruna seeds",
+            "es": "Semillas de chacruna"
+          }
+        }
+      ]
+    },
+    {
+      "key": "banisteriopsis",
+      "commonNamePtBr": "mariri / cipó-caapi",
+      "scientificName": "Banisteriopsis caapi",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "banisteriopsis_scraps",
+          "scientific": "Banisteriopsis caapi",
+          "names": {
+            "pt-BR": "Fragmentos de mariri / cipó-caapi",
+            "en": "Caapi vine scraps",
+            "es": "Fragmentos de liana caapi"
+          }
+        }
+      ]
+    },
+    {
+      "key": "coca",
+      "commonNamePtBr": "coca",
+      "scientificName": "Erythroxylum coca",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "coca_leafs",
+          "scientific": "Erythroxylum coca",
+          "names": {
+            "pt-BR": "Folhas de coca",
+            "en": "Coca leaves",
+            "es": "Hojas de coca"
+          }
+        }
+      ]
+    },
+    {
+      "key": "brazil_nut",
+      "commonNamePtBr": "castanha-do-pará",
+      "scientificName": "Bertholletia excelsa",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Brazil_nut_whole",
+          "scientific": "Bertholletia excelsa",
+          "names": {
+            "pt-BR": "Ouriço de castanha-do-pará",
+            "en": "Brazil nut pod",
+            "es": "Cápsula de nuez de Brasil"
+          }
+        },
+        {
+          "id": "Brazil_nut",
+          "scientific": "Bertholletia excelsa",
+          "names": {
+            "pt-BR": "Castanha-do-pará",
+            "en": "Brazil nut",
+            "es": "Nuez de Brasil"
+          }
+        },
+        {
+          "id": "Brazil_nut_Spoiled",
+          "scientific": "Bertholletia excelsa",
+          "names": {
+            "pt-BR": "Castanha-do-pará (estragada)",
+            "en": "Brazil nut (spoiled)",
+            "es": "Nuez de Brasil (estropeada)"
+          }
+        },
+        {
+          "id": "Brazilian_Seeds",
+          "scientific": "Bertholletia excelsa",
+          "names": {
+            "pt-BR": "Castanha-do-pará para plantio",
+            "en": "Brazil nut for planting",
+            "es": "Nuez de Brasil para plantar"
+          }
+        }
+      ]
+    },
+    {
+      "key": "raffia",
+      "commonNamePtBr": "palmeira-ráfia",
+      "scientificName": "Raphia spp.",
+      "confidence": "alta_para_genero",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Raffia_nut",
+          "scientific": "Raphia spp.",
+          "names": {
+            "pt-BR": "Fruto de palmeira-ráfia",
+            "en": "Raffia palm fruit",
+            "es": "Fruto de palmera rafia"
+          }
+        },
+        {
+          "id": "Raffia_nut_Spoiled",
+          "scientific": "Raphia spp.",
+          "names": {
+            "pt-BR": "Fruto de palmeira-ráfia (estragado)",
+            "en": "Raffia palm fruit (spoiled)",
+            "es": "Fruto de palmera rafia (estropeado)"
+          }
+        },
+        {
+          "id": "Raffia_Seeds",
+          "scientific": "Raphia spp.",
+          "names": {
+            "pt-BR": "Semente de palmeira-ráfia",
+            "en": "Raffia palm seed",
+            "es": "Semilla de palmera rafia"
+          }
+        }
+      ]
+    },
+    {
+      "key": "banana",
+      "commonNamePtBr": "bananeira",
+      "scientificName": "Musa spp.",
+      "confidence": "alta_para_genero",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Banana",
+          "scientific": "Musa spp.",
+          "names": {
+            "pt-BR": "Banana",
+            "en": "Banana",
+            "es": "Banana"
+          }
+        },
+        {
+          "id": "Banana_Spoiled",
+          "scientific": "Musa spp.",
+          "names": {
+            "pt-BR": "Banana (estragada)",
+            "en": "Banana (spoiled)",
+            "es": "Banana (estropeada)"
+          }
+        },
+        {
+          "id": "Banana_Seeds",
+          "scientific": "Musa spp.",
+          "names": {
+            "pt-BR": "Sementes de banana",
+            "en": "Banana seeds",
+            "es": "Semillas de banana"
+          }
+        },
+        {
+          "id": "Banana_Leaf",
+          "scientific": "Musa spp.",
+          "names": {
+            "pt-BR": "Folha de bananeira",
+            "en": "Banana leaf",
+            "es": "Hoja de bananera"
+          }
+        }
+      ]
+    },
+    {
+      "key": "coconut",
+      "commonNamePtBr": "coqueiro",
+      "scientificName": "Cocos nucifera",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Coconut_Green",
+          "scientific": "Cocos nucifera",
+          "names": {
+            "pt-BR": "Coco-verde",
+            "en": "Green coconut",
+            "es": "Coco verde"
+          }
+        },
+        {
+          "id": "Coconut",
+          "scientific": "Cocos nucifera",
+          "names": {
+            "pt-BR": "Coco",
+            "en": "Coconut",
+            "es": "Coco"
+          }
+        },
+        {
+          "id": "Coconut_flesh",
+          "scientific": "Cocos nucifera",
+          "names": {
+            "pt-BR": "Polpa de coco",
+            "en": "Coconut flesh",
+            "es": "Pulpa de coco"
+          }
+        },
+        {
+          "id": "Coconut_flesh_Cooked",
+          "scientific": "Cocos nucifera",
+          "names": {
+            "pt-BR": "Polpa de coco (cozida)",
+            "en": "Coconut flesh (cooked)",
+            "es": "Pulpa de coco (cocida)"
+          }
+        },
+        {
+          "id": "Coconut_flesh_Spoiled",
+          "scientific": "Cocos nucifera",
+          "names": {
+            "pt-BR": "Polpa de coco (estragada)",
+            "en": "Coconut flesh (spoiled)",
+            "es": "Pulpa de coco (estropeada)"
+          }
+        },
+        {
+          "id": "Coconut_Shell_Flesh",
+          "scientific": "Cocos nucifera",
+          "names": {
+            "pt-BR": "Meio coco com polpa",
+            "en": "Coconut half with flesh",
+            "es": "Medio coco con pulpa"
+          }
+        },
+        {
+          "id": "Coconut_Shell_Flesh_Spoiled",
+          "scientific": "Cocos nucifera",
+          "names": {
+            "pt-BR": "Meio coco com polpa (estragada)",
+            "en": "Coconut half with flesh (spoiled)",
+            "es": "Medio coco con pulpa (estropeada)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "water_lily",
+      "commonNamePtBr": "nenúfar",
+      "scientificName": "Nymphaea spp.",
+      "confidence": "alta_para_genero",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "lily_flower",
+          "scientific": "Nymphaea spp.",
+          "names": {
+            "pt-BR": "Flor de nenúfar",
+            "en": "Water lily flower",
+            "es": "Flor de nenúfar"
+          }
+        }
+      ]
+    },
+    {
+      "key": "ficus",
+      "commonNamePtBr": "figueira",
+      "scientificName": "Ficus spp.",
+      "confidence": "alta_para_genero",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Ficus_leaf",
+          "scientific": "Ficus spp.",
+          "names": {
+            "pt-BR": "Folha de figueira",
+            "en": "Fig leaf",
+            "es": "Hoja de higuera"
+          }
+        }
+      ]
+    },
+    {
+      "key": "palm_heart",
+      "commonNamePtBr": "palmeira produtora de palmito",
+      "scientificName": "Arecaceae sp.",
+      "confidence": "baixa_para_especie",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Palm_heart",
+          "scientific": "Arecaceae sp.",
+          "names": {
+            "pt-BR": "Palmito",
+            "en": "Heart of palm",
+            "es": "Palmito"
+          }
+        },
+        {
+          "id": "Palm_heart_Spoiled",
+          "scientific": "Arecaceae sp.",
+          "names": {
+            "pt-BR": "Palmito (estragado)",
+            "en": "Heart of palm (spoiled)",
+            "es": "Palmito (estropeado)"
+          }
+        },
+        {
+          "id": "Palm_Heart_dryed",
+          "scientific": "Arecaceae sp.",
+          "names": {
+            "pt-BR": "Palmito (seco)",
+            "en": "Heart of palm (dried)",
+            "es": "Palmito (seco)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "phallus_indusiatus",
+      "commonNamePtBr": "cogumelo véu-de-noiva",
+      "scientificName": "Phallus indusiatus",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Phallus_indusiatus",
+          "scientific": "Phallus indusiatus",
+          "names": {
+            "pt-BR": "Cogumelo véu-de-noiva",
+            "en": "Veiled lady mushroom",
+            "es": "Hongo velo de novia"
+          }
+        },
+        {
+          "id": "Phallus_indusiatus_Dryed",
+          "scientific": "Phallus indusiatus",
+          "names": {
+            "pt-BR": "Cogumelo véu-de-noiva (seco)",
+            "en": "Veiled lady mushroom (dried)",
+            "es": "Hongo velo de novia (seco)"
+          }
+        },
+        {
+          "id": "Phallus_indusiatus_Spoiled",
+          "scientific": "Phallus indusiatus",
+          "names": {
+            "pt-BR": "Cogumelo véu-de-noiva (estragado)",
+            "en": "Veiled lady mushroom (spoiled)",
+            "es": "Hongo velo de novia (estropeado)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "gerronema_viridilucens",
+      "commonNamePtBr": "gerronema bioluminescente",
+      "scientificName": "Gerronema viridilucens",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Gerronema_viridilucens",
+          "scientific": "Gerronema viridilucens",
+          "names": {
+            "pt-BR": "Gerronema bioluminescente",
+            "en": "Bioluminescent gerronema",
+            "es": "Gerronema bioluminiscente"
+          }
+        },
+        {
+          "id": "Gerronema_viridilucens_dryed",
+          "scientific": "Gerronema viridilucens",
+          "names": {
+            "pt-BR": "Gerronema bioluminescente (seco)",
+            "en": "Bioluminescent gerronema (dried)",
+            "es": "Gerronema bioluminiscente (seco)"
+          }
+        },
+        {
+          "id": "Gerronema_viridilucens_Spoiled",
+          "scientific": "Gerronema viridilucens",
+          "names": {
+            "pt-BR": "Gerronema bioluminescente (estragado)",
+            "en": "Bioluminescent gerronema (spoiled)",
+            "es": "Gerronema bioluminiscente (estropeado)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "gerronema_retiarium",
+      "commonNamePtBr": "gerronema retiário",
+      "scientificName": "Gerronema retiarium",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Gerronema_retiarium",
+          "scientific": "Gerronema retiarium",
+          "names": {
+            "pt-BR": "Gerronema retiário",
+            "en": "Reticulate gerronema",
+            "es": "Gerronema reticulado"
+          }
+        },
+        {
+          "id": "Gerronema_retiarium_dryed",
+          "scientific": "Gerronema retiarium",
+          "names": {
+            "pt-BR": "Gerronema retiário (seco)",
+            "en": "Reticulate gerronema (dried)",
+            "es": "Gerronema reticulado (seco)"
+          }
+        },
+        {
+          "id": "Gerronema_retiarium_Spoiled",
+          "scientific": "Gerronema retiarium",
+          "names": {
+            "pt-BR": "Gerronema retiário (estragado)",
+            "en": "Reticulate gerronema (spoiled)",
+            "es": "Gerronema reticulado (estropeado)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "indigo_blue_leptonia",
+      "commonNamePtBr": "leptônia-azul",
+      "scientificName": "Entoloma subcarneum",
+      "confidence": "media_alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "Indigo Blue Leptonia",
+      "items": [
+        {
+          "id": "indigo_blue_leptonia",
+          "scientific": "Entoloma subcarneum",
+          "names": {
+            "pt-BR": "Leptônia-azul",
+            "en": "Indigo blue leptonia",
+            "es": "Leptonia azul índigo"
+          }
+        },
+        {
+          "id": "indigo_blue_leptonia_dryed",
+          "scientific": "Entoloma subcarneum",
+          "names": {
+            "pt-BR": "Leptônia-azul (seca)",
+            "en": "Indigo blue leptonia (dried)",
+            "es": "Leptonia azul índigo (seca)"
+          }
+        },
+        {
+          "id": "indigo_blue_leptonia_Spoiled",
+          "scientific": "Entoloma subcarneum",
+          "names": {
+            "pt-BR": "Leptônia-azul (estragada)",
+            "en": "Indigo blue leptonia (spoiled)",
+            "es": "Leptonia azul índigo (estropeada)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "copa_hongo",
+      "commonNamePtBr": "taça-escarlate / cogumelo-de-copa",
+      "scientificName": "Sarcoscypha coccinea",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "copa_hongo",
+          "scientific": "Sarcoscypha coccinea",
+          "names": {
+            "pt-BR": "Cogumelo-de-copa / taça-escarlate",
+            "en": "Scarlet cup mushroom",
+            "es": "Hongo copa escarlata"
+          }
+        },
+        {
+          "id": "copa_hongo_dryed",
+          "scientific": "Sarcoscypha coccinea",
+          "names": {
+            "pt-BR": "Cogumelo-de-copa / taça-escarlate (seco)",
+            "en": "Scarlet cup mushroom (dried)",
+            "es": "Hongo copa escarlata (seco)"
+          }
+        },
+        {
+          "id": "copa_hongo_Spoiled",
+          "scientific": "Sarcoscypha coccinea",
+          "names": {
+            "pt-BR": "Cogumelo-de-copa / taça-escarlate (estragado)",
+            "en": "Scarlet cup mushroom (spoiled)",
+            "es": "Hongo copa escarlata (estropeado)"
+          }
+        }
+      ]
+    }
+  ]
+}

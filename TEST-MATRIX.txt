@@ -1,0 +1,21 @@
+BOTANY DISCOVERY 2.0.0 - IN-GAME RELEASE MATRIX
+
+[ ] New survival session: only already discovered notebook pages are changed.
+[ ] Existing save: known pages display names; save timestamp/data are otherwise unaffected.
+[ ] Save and reload: Green Hell progression remains unchanged; preferences persist.
+[ ] Host: titles render locally and no network errors are logged.
+[ ] Client: titles render locally and no host installation is required.
+[ ] Late join and reconnect: notebook reconstructs and titles reapply.
+[ ] Death/respawn: notebook titles remain correct.
+[ ] Scene and mode changes: no duplicate patches or stale title objects.
+[ ] PT-BR, English and Spanish: automatic detection and all 85 entries render.
+[ ] Language change during session: visible titles refresh after ApplyLanguage.
+[ ] Common, scientific and both modes: cooked/dried/spoiled state suffixes remain visible.
+[ ] Inline, stacked and compact at 16:9, ultrawide and minimum supported resolution.
+[ ] Details on: confidence and Molineria synonym fit without overlap.
+[ ] Font fit on/off: original layout properties restore after mod unload.
+[ ] Disable/unload while notebook is open: native titles return immediately.
+[ ] Reload mod: initialization is single and status counters are sane.
+[ ] Green Hell version mismatch: warning is visible and the game remains usable.
+[ ] Console `botany status`: reports catalog 85/85 and expected configuration.
+[ ] Unity log: no Harmony exception, missing target or repeated unknown ItemID warning.

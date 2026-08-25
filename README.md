@@ -1,42 +1,49 @@
 # Botany Discovery
 
-A Green Hell mod that displays common and scientific botanical names for notebook entries already discovered by the player.
+Botany Discovery enriches Green Hell notebook entries that the player has already discovered with localized common and scientific botanical names. It does not unlock pages, reveal recipes, change item effects, modify Green Hell saves, or transmit custom cooperative state.
 
-## Features
+## Version 2.0.0
 
-- 85 `ItemIDs` across 25 botanical species or groups.
-- Specific names for leaves, flowers, fruits, seeds, roots and mushrooms.
-- Common, scientific or combined display modes.
-- Automatic Brazilian Portuguese, English and Spanish localization based on the Green Hell language.
-- English fallback for other game languages.
-- Works locally for host and client in cooperative games.
-- Does not unlock pages, alter progress or write names to save files.
+- 85 ItemIDs across 25 botanical species or groups.
+- Brazilian Portuguese, English and Spanish, with English fallback.
+- Persistent common, scientific, or combined display modes.
+- Inline, stacked, and compact layouts.
+- Italic scientific names and optional adaptive font sizing.
+- Optional identification-confidence, synonym, and in-game-name notes.
+- Automatic refresh after Green Hell applies a language change.
+- Idempotent initialization and patch-target diagnostics.
+- Native title and layout restoration when the mod is unloaded.
+- Native Green Hell version detection, distinct from the package target in `modinfo.json`.
 
 ## Commands
 
 ```text
 botany status
-botany common
-botany scientific
-botany both
+botany common | scientific | both
 botany apply
-botany mushrooms
+botany layout inline | stacked | compact
+botany details on | off
+botany fontfit on | off
+botany language auto | pt-BR | en | es
+botany reset
 ```
 
-The legacy `botanica` command and Portuguese and Spanish subcommand aliases remain available for compatibility.
+The legacy `botanica` command and Portuguese/Spanish aliases remain supported. Preferences are stored locally in Unity PlayerPrefs, separately from Green Hell save files.
+
+## Catalog workflow
+
+`botany-catalog.json` is the single editable catalog source. `BotanicaCatalog.Generated.cs` is generated from it and must not be edited manually. The validation tooling checks the schema, language coverage, duplicate ItemIDs, scientific-name consistency, expected counts, generated-code freshness, and compilation against the installed Green Hell 2.9.5 assemblies.
+
+## Compatibility and testing
+
+- Target: Green Hell 2.9.5.
+- Local-only behavior for host and client.
+- Cooperative entry, automatic title application, unload, reload, and common/scientific rendering have been tested successfully.
+- `TEST-MATRIX.txt` tracks the remaining language, layout, save/load, reconnect, and mixed-installation scenarios.
 
 ## Installation
 
-Copy the `.ghmod` file from the release into the Green Hell `mods` folder, then compile and activate it through the ModLoader.
-
-## Compatibility
-
-- Green Hell 2.9.5
-- Tested as host and client.
-
-## Development
-
-The ModCompiler compiles `BotanicaDescoberta.cs`, `BotanicaCatalog.cs` and `BotanicaLocalization.cs`. The `catalogo-botanica-descoberta.json` file documents the logical source of the names, species grouping and identification confidence levels.
+Copy the `.ghmod` from a published release into the Green Hell `Mods` folder and activate it through the ModLoader. Do not run version 1.x and 2.x simultaneously.
 
 ## License
 

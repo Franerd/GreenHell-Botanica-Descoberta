@@ -1,133 +1,208 @@
 using System;
-using System.Collections.Generic;
 using System.Reflection;
-
 using HarmonyLib;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BotanicaDescoberta : Mod {
-    private const string HarmonyId = "com.franerd.greenhell.botanica-descoberta";
-    private Harmony _harmony;
+    private const string HarmonyId = "com.franerd.greenhell.botany-discovery";
+    private const string Version = "2.0.0";
+    private const string TargetGameVersion = "2.9.5";
+    private static Harmony _harmony;
+    private static bool _loaded;
 
     public void Start() {
+        if (_loaded) {
+            Debug.LogWarning("[Botany Discovery] Duplicate initialization ignored.");
+            return;
+        }
+
+        BotanicaSettings.Load();
+        BotanicaRuntime.ResetCounters();
         _harmony = new Harmony(HarmonyId);
-        _harmony.PatchAll(Assembly.GetExecutingAssembly());
-        Debug.Log("[BotanicaDescoberta] 1.0.1 | " + BotanicaCatalog.Count + " ItemIDs | " + BotanicaLocalization.LanguageCode + ".");
+        _harmony.UnpatchAll(HarmonyId);
+
+        bool targetsAvailable = ValidatePatchTargets();
+        try {
+            _harmony.PatchAll(Assembly.GetExecutingAssembly());
+            _loaded = true;
+        } catch (Exception exception) {
+            _harmony.UnpatchAll(HarmonyId);
+            Debug.LogError("[Botany Discovery] Patch installation failed: " + exception);
+            return;
+        }
+
+        string detectedGameVersion = GetDetectedGameVersion();
+        if (!string.IsNullOrEmpty(detectedGameVersion) &&
+            !string.Equals(detectedGameVersion, TargetGameVersion, StringComparison.OrdinalIgnoreCase)) {
+            Debug.LogWarning("[Botany Discovery] Package target Green Hell " + TargetGameVersion +
+                "; game reports " + detectedGameVersion +
+                ". Use 'botany status' after opening the notebook.");
+        }
+        Debug.Log("[Botany Discovery] " + Version + " loaded; " + BotanicaCatalog.Count +
+            " ItemIDs; language " + BotanicaLocalization.LanguageCode +
+            "; game " + (string.IsNullOrEmpty(detectedGameVersion) ? "unknown" : detectedGameVersion) +
+            "; package target " + TargetGameVersion +
+            "; patch targets " + (targetsAvailable ? "verified" : "incomplete") + ".");
     }
 
     public void OnModUnload() {
-        if (_harmony != null) {
-            _harmony.UnpatchAll(HarmonyId);
-        }
-        Debug.Log("[BotanicaDescoberta] Descarregado.");
+        int restored = BotanicaRuntime.RestoreAll();
+        if (_harmony != null) _harmony.UnpatchAll(HarmonyId);
+        _harmony = null;
+        _loaded = false;
+        Debug.Log("[Botany Discovery] Unloaded; native titles restored: " + restored + ".");
     }
 
-    [ConsoleCommand("botanica", "Botanical names in the notebook")]
+    [ConsoleCommand("botany", "Botanical notebook names and local field-guide settings")]
+    public static void CommandEnglish(string[] args) { Command(args); }
+
+    [ConsoleCommand("botanica", "Nomes botânicos e configurações locais do caderno")]
     public static void Command(string[] args) {
-        string action = args == null || args.Length == 0 ? "status" : args[0].ToLowerInvariant();
-        if (action == "status") {
-            Debug.Log(Message(
-                "Botânica Descoberta: " + BotanicaCatalog.Count + " ItemIDs; modo: " + BotanicaCatalog.ModeName + "; idioma: " + BotanicaLocalization.LanguageCode + ".",
-                "Botany Discovery: " + BotanicaCatalog.Count + " ItemIDs; mode: " + BotanicaCatalog.ModeName + "; language: " + BotanicaLocalization.LanguageCode + ".",
-                "Botánica Descubierta: " + BotanicaCatalog.Count + " ItemIDs; modo: " + BotanicaCatalog.ModeName + "; idioma: " + BotanicaLocalization.LanguageCode + "."));
-            Debug.Log(Message(
-                "O mod altera apenas textos em memória; não desbloqueia páginas e não grava nomes no save.",
-                "The mod only changes text in memory; it does not unlock pages or save names to the save file.",
-                "El mod solo cambia textos en memoria; no desbloquea páginas ni guarda nombres en la partida."));
+        string action = args == null || args.Length == 0
+            ? "status" : args[0].ToLowerInvariant();
+
+        if (action == "status") { LogStatus(); return; }
+        if (action == "help" || action == "ajuda" || action == "ayuda") { LogHelp(); return; }
+        if (action == "apply" || action == "aplicar") {
+            int changed = BotanicaRuntime.RefreshAll();
+            Debug.Log(Local("Títulos atualizados: ", "Titles updated: ", "Títulos actualizados: ") + changed + ".");
             return;
         }
-        if (action == "comum" || action == "common" || action == "comun" ||
-            action == "cientifico" || action == "scientific" || action == "ambos" || action == "both") {
-            string mode = action;
-            if (action == "common" || action == "comun") mode = "comum";
-            else if (action == "scientific") mode = "cientifico";
-            else if (action == "both") mode = "ambos";
-            BotanicaCatalog.SetMode(mode);
-            RefreshVisibleTitles();
-            Debug.Log(Message("Modo botânico: ", "Botanical mode: ", "Modo botánico: ") + BotanicaCatalog.ModeName + ".");
+        if (action == "common" || action == "comum" || action == "comun") {
+            BotanicaSettings.SetDisplayMode(BotanicaDisplayMode.Common); ApplyAndConfirm(); return;
+        }
+        if (action == "scientific" || action == "cientifico") {
+            BotanicaSettings.SetDisplayMode(BotanicaDisplayMode.Scientific); ApplyAndConfirm(); return;
+        }
+        if (action == "both" || action == "ambos") {
+            BotanicaSettings.SetDisplayMode(BotanicaDisplayMode.Both); ApplyAndConfirm(); return;
+        }
+        if (action == "layout" && args.Length > 1) {
+            string value = args[1].ToLowerInvariant();
+            if (value == "inline") BotanicaSettings.SetLayoutMode(BotanicaLayoutMode.Inline);
+            else if (value == "stacked" || value == "empilhado" || value == "apilado") BotanicaSettings.SetLayoutMode(BotanicaLayoutMode.Stacked);
+            else if (value == "compact" || value == "compacto") BotanicaSettings.SetLayoutMode(BotanicaLayoutMode.Compact);
+            else { LogHelp(); return; }
+            ApplyAndConfirm(); return;
+        }
+        if ((action == "details" || action == "detalhes" || action == "detalles") && args.Length > 1) {
+            bool value;
+            if (!TryReadToggle(args[1], out value)) { LogHelp(); return; }
+            BotanicaSettings.SetShowDetails(value); ApplyAndConfirm(); return;
+        }
+        if (action == "fontfit" && args.Length > 1) {
+            bool value;
+            if (!TryReadToggle(args[1], out value)) { LogHelp(); return; }
+            BotanicaSettings.SetAdaptiveFont(value); ApplyAndConfirm(); return;
+        }
+        if ((action == "language" || action == "idioma") && args.Length > 1) {
+            string value = args[1].ToLowerInvariant();
+            if (value == "auto") BotanicaSettings.SetLanguageMode(BotanicaLanguageMode.Auto);
+            else if (value == "pt" || value == "pt-br") BotanicaSettings.SetLanguageMode(BotanicaLanguageMode.PortugueseBrazilian);
+            else if (value == "en" || value == "english") BotanicaSettings.SetLanguageMode(BotanicaLanguageMode.English);
+            else if (value == "es" || value == "spanish") BotanicaSettings.SetLanguageMode(BotanicaLanguageMode.Spanish);
+            else { LogHelp(); return; }
+            ApplyAndConfirm(); return;
+        }
+        if (action == "reset") {
+            BotanicaSettings.Reset();
+            ApplyAndConfirm();
             return;
         }
-        if (action == "aplicar" || action == "apply") {
-            int changed = RefreshVisibleTitles();
-            Debug.Log(Message("Títulos botânicos atualizados: ", "Botanical titles updated: ", "Títulos botánicos actualizados: ") + changed + ".");
-            return;
-        }
-        if (action == "cogumelos" || action == "mushrooms" || action == "hongos") {
-            Debug.Log(Message(
-                "Cogumelos: véu-de-noiva, Gerronema viridilucens, Gerronema retiarium, leptônia-azul e cogumelo-de-copa.",
-                "Mushrooms: veiled lady, Gerronema viridilucens, Gerronema retiarium, indigo blue leptonia and scarlet cup.",
-                "Hongos: velo de novia, Gerronema viridilucens, Gerronema retiarium, leptonia azul índigo y copa escarlata."));
-            return;
-        }
-        Debug.Log(Message(
-            "Uso: botanica [status|comum|cientifico|ambos|aplicar|cogumelos]",
-            "Usage: botanica [status|common|scientific|both|apply|mushrooms]",
-            "Uso: botanica [status|comun|cientifico|ambos|aplicar|hongos]"));
+        LogHelp();
     }
 
-    [ConsoleCommand("botany", "Botanical names in the notebook")]
-    public static void CommandEnglish(string[] args) {
-        Command(args);
+    private static void ApplyAndConfirm() {
+        int changed = BotanicaRuntime.RefreshAll();
+        Debug.Log(Local("Configuração salva; títulos atualizados: ", "Setting saved; titles updated: ",
+            "Configuración guardada; títulos actualizados: ") + changed + ".");
     }
 
-    internal static int RefreshVisibleTitles() {
-        int changed = 0;
-        NotepadPlantTitleReplacer[] replacers = Resources.FindObjectsOfTypeAll<NotepadPlantTitleReplacer>();
-        foreach (NotepadPlantTitleReplacer replacer in replacers) {
-            if (BotanicaTitlePatch.Apply(replacer)) {
-                changed++;
-            }
+    private static void LogStatus() {
+        string detectedGameVersion = GetDetectedGameVersion();
+        Debug.Log("[Botany Discovery] " + Version + " | Green Hell " +
+            (string.IsNullOrEmpty(detectedGameVersion) ? "unknown" : detectedGameVersion) +
+            " | package target " + TargetGameVersion +
+            " | catalog " + BotanicaCatalog.Count + "/85 | language " + BotanicaLocalization.LanguageCode +
+            " | display " + BotanicaSettings.DisplayMode + " | layout " + BotanicaSettings.LayoutMode +
+            " | details " + OnOff(BotanicaSettings.ShowDetails) + " | font fit " +
+            OnOff(BotanicaSettings.AdaptiveFont) + " | tracked " + BotanicaRuntime.TrackedTitles +
+            " | applications " + BotanicaRuntime.TitlesApplied + ".");
+        Debug.Log(Local(
+            "Somente textos e preferências locais; nenhum desbloqueio, save ou estado de rede é alterado.",
+            "Local text and preferences only; no unlock, save, or network state is changed.",
+            "Solo texto y preferencias locales; no se modifican desbloqueos, partidas ni estado de red."));
+    }
+
+    private static void LogHelp() {
+        Debug.Log("botany [status|common|scientific|both|apply|reset]");
+        Debug.Log("botany layout [inline|stacked|compact]");
+        Debug.Log("botany details [on|off] | botany fontfit [on|off]");
+        Debug.Log("botany language [auto|pt-BR|en|es]");
+    }
+
+    private static bool ValidatePatchTargets() {
+        bool valid = true;
+        valid &= CheckTarget(typeof(NotepadPlantTitleReplacer), "OnEnable");
+        valid &= CheckTarget(typeof(PlantsTab), "Init");
+        valid &= CheckTarget(typeof(PlantsTab), "OnEnable");
+        valid &= CheckTarget(typeof(GameSettings), "ApplyLanguage");
+        return valid;
+    }
+
+    private static bool CheckTarget(Type type, string method) {
+        if (AccessTools.Method(type, method) != null) return true;
+        Debug.LogWarning("[Botany Discovery] Patch target unavailable: " + type.FullName + "." + method + ".");
+        return false;
+    }
+
+    private static string GetDetectedGameVersion() {
+        try {
+            GameVersion version = GreenHellGame.s_GameVersion;
+            if (version == null) return string.Empty;
+            string official = version.ToStringOfficial();
+            if (string.IsNullOrEmpty(official)) return string.Empty;
+            official = official.Trim();
+            if (official.StartsWith("V", StringComparison.OrdinalIgnoreCase))
+                official = official.Substring(1);
+            return official.Replace(',', '.');
+        } catch (Exception exception) {
+            Debug.LogWarning("[Botany Discovery] Native game-version lookup unavailable: " + exception.Message);
+            return string.Empty;
         }
-        return changed;
     }
 
-    private static string Message(string portuguese, string english, string spanish) {
-        if (BotanicaLocalization.LanguageCode == "pt-BR") return portuguese;
-        if (BotanicaLocalization.LanguageCode == "es") return spanish;
-        return english;
+    private static bool TryReadToggle(string value, out bool enabled) {
+        if (value.Equals("on", StringComparison.OrdinalIgnoreCase) ||
+            value.Equals("true", StringComparison.OrdinalIgnoreCase) || value == "1") { enabled = true; return true; }
+        if (value.Equals("off", StringComparison.OrdinalIgnoreCase) ||
+            value.Equals("false", StringComparison.OrdinalIgnoreCase) || value == "0") { enabled = false; return true; }
+        enabled = false; return false;
     }
+
+    private static string OnOff(bool value) { return value ? "on" : "off"; }
+    private static string Local(string pt, string en, string es) { return BotanicaLocalization.Message(pt, en, es); }
 }
 
 [HarmonyPatch(typeof(NotepadPlantTitleReplacer), "OnEnable")]
 internal static class BotanicaTitlePatch {
-    [HarmonyPostfix]
-    private static void Postfix(NotepadPlantTitleReplacer __instance) {
-        Apply(__instance);
-    }
-
-    internal static bool Apply(NotepadPlantTitleReplacer instance) {
-        if (instance == null || string.IsNullOrEmpty(instance.m_ItemID)) {
-            return false;
-        }
-        string title;
-        if (!BotanicaCatalog.TryGetDisplayName(instance.m_ItemID, out title)) {
-            return false;
-        }
-        Text text = instance.GetComponent<Text>();
-        if (text == null) {
-            return false;
-        }
-        text.text = title;
-        return true;
-    }
+    private static void Postfix(NotepadPlantTitleReplacer __instance) { BotanicaRuntime.Apply(__instance); }
 }
 
-// PlantsTab.Init localizes every text after its child components may already
-// have received OnEnable. Reapply our titles after that pass so entries such
-// as Palm Heart are not overwritten by the game's default localization.
 [HarmonyPatch(typeof(PlantsTab), "Init")]
 internal static class BotanicaPlantsTabInitPatch {
-    [HarmonyPostfix]
-    private static void Postfix() {
-        BotanicaDescoberta.RefreshVisibleTitles();
-    }
+    private static void Postfix(PlantsTab __instance) { BotanicaRuntime.RefreshTab(__instance); }
 }
 
 [HarmonyPatch(typeof(PlantsTab), "OnEnable")]
 internal static class BotanicaPlantsTabEnablePatch {
-    [HarmonyPostfix]
-    private static void Postfix() {
-        BotanicaDescoberta.RefreshVisibleTitles();
+    private static void Postfix(PlantsTab __instance) { BotanicaRuntime.RefreshTab(__instance); }
+}
+
+[HarmonyPatch(typeof(GameSettings), "ApplyLanguage")]
+internal static class BotanicaLanguageAppliedPatch {
+    private static void Postfix(GameSettings __instance) {
+        BotanicaLocalization.SetActiveSettings(__instance);
+        BotanicaRuntime.RefreshAll();
     }
 }

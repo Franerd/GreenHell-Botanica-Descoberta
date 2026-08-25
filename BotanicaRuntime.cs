@@ -1,0 +1,166 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+internal static class BotanicaRuntime {
+    private sealed class TextSnapshot {
+        internal Text Text;
+        internal string OriginalText;
+        internal string LastAppliedText;
+        internal bool RichText;
+        internal bool ResizeForBestFit;
+        internal int ResizeMin;
+        internal int ResizeMax;
+    }
+
+    private static readonly Dictionary<int, TextSnapshot> Snapshots =
+        new Dictionary<int, TextSnapshot>();
+
+    private static int _titlesApplied;
+    private static int _unknownItemIds;
+
+    internal static int TitlesApplied { get { return _titlesApplied; } }
+    internal static int UnknownItemIds { get { return _unknownItemIds; } }
+    internal static int TrackedTitles { get { return Snapshots.Count; } }
+
+    internal static bool Apply(NotepadPlantTitleReplacer replacer) {
+        if (replacer == null || string.IsNullOrEmpty(replacer.m_ItemID)) return false;
+
+        BotanicaEntry entry;
+        if (!BotanicaCatalog.TryGet(replacer.m_ItemID, out entry)) {
+            _unknownItemIds++;
+            return false;
+        }
+
+        Text text = replacer.GetComponent<Text>();
+        if (text == null) return false;
+
+        int id = text.GetInstanceID();
+        TextSnapshot snapshot;
+        if (!Snapshots.TryGetValue(id, out snapshot)) {
+            snapshot = new TextSnapshot {
+                Text = text,
+                OriginalText = text.text,
+                LastAppliedText = null,
+                RichText = text.supportRichText,
+                ResizeForBestFit = text.resizeTextForBestFit,
+                ResizeMin = text.resizeTextMinSize,
+                ResizeMax = text.resizeTextMaxSize
+            };
+            Snapshots.Add(id, snapshot);
+        } else if (snapshot.Text != null && snapshot.LastAppliedText != text.text) {
+            // The game relocalized or rebuilt this title after our previous pass.
+            snapshot.OriginalText = text.text;
+        }
+
+        string display = BuildDisplay(entry);
+        text.supportRichText = true;
+        if (BotanicaSettings.AdaptiveFont) {
+            text.resizeTextForBestFit = true;
+            text.resizeTextMinSize = Math.Max(10, Math.Min(snapshot.ResizeMin, 14));
+            text.resizeTextMaxSize = Math.Max(text.resizeTextMinSize, snapshot.ResizeMax);
+        } else {
+            text.resizeTextForBestFit = snapshot.ResizeForBestFit;
+            text.resizeTextMinSize = snapshot.ResizeMin;
+            text.resizeTextMaxSize = snapshot.ResizeMax;
+        }
+        text.text = display;
+        snapshot.LastAppliedText = display;
+        _titlesApplied++;
+        return true;
+    }
+
+    internal static int RefreshAll() {
+        int changed = 0;
+        NotepadPlantTitleReplacer[] replacers =
+            Resources.FindObjectsOfTypeAll<NotepadPlantTitleReplacer>();
+        for (int i = 0; replacers != null && i < replacers.Length; i++) {
+            if (Apply(replacers[i])) changed++;
+        }
+        CleanupDestroyedSnapshots();
+        return changed;
+    }
+
+    internal static int RefreshTab(PlantsTab tab) {
+        if (tab == null) return 0;
+        int changed = 0;
+        NotepadPlantTitleReplacer[] replacers =
+            tab.GetComponentsInChildren<NotepadPlantTitleReplacer>(true);
+        for (int i = 0; replacers != null && i < replacers.Length; i++) {
+            if (Apply(replacers[i])) changed++;
+        }
+        CleanupDestroyedSnapshots();
+        return changed;
+    }
+
+    internal static int RestoreAll() {
+        int restored = 0;
+        foreach (TextSnapshot snapshot in Snapshots.Values) {
+            if (snapshot.Text == null) continue;
+            snapshot.Text.text = snapshot.OriginalText;
+            snapshot.Text.supportRichText = snapshot.RichText;
+            snapshot.Text.resizeTextForBestFit = snapshot.ResizeForBestFit;
+            snapshot.Text.resizeTextMinSize = snapshot.ResizeMin;
+            snapshot.Text.resizeTextMaxSize = snapshot.ResizeMax;
+            restored++;
+        }
+        Snapshots.Clear();
+        return restored;
+    }
+
+    internal static void ResetCounters() {
+        _titlesApplied = 0;
+        _unknownItemIds = 0;
+    }
+
+    private static string BuildDisplay(BotanicaEntry entry) {
+        string common = BotanicaLocalization.CommonName(entry);
+        string state = StateSuffix(common);
+        string scientific = "<i>" + entry.Scientific + "</i>";
+        BotanicaDisplayMode mode = BotanicaSettings.DisplayMode;
+        string title;
+
+        if (mode == BotanicaDisplayMode.Common) {
+            title = common;
+        } else if (mode == BotanicaDisplayMode.Scientific) {
+            title = scientific + state;
+        } else if (BotanicaSettings.LayoutMode == BotanicaLayoutMode.Inline) {
+            title = common + " — " + scientific;
+        } else {
+            title = common + "\n" + scientific;
+        }
+
+        if (BotanicaSettings.ShowDetails &&
+            BotanicaSettings.LayoutMode != BotanicaLayoutMode.Compact) {
+            title += "\n<color=#6f705f>" +
+                BotanicaLocalization.ConfidenceLabel(entry.Confidence);
+            if (!string.IsNullOrEmpty(entry.TaxonomicSynonym)) {
+                title += " · " + BotanicaLocalization.SynonymLabel + ": <i>" +
+                    entry.TaxonomicSynonym + "</i>";
+            }
+            if (!string.IsNullOrEmpty(entry.GameIdentification)) {
+                title += " · " + BotanicaLocalization.GameIdentificationLabel + ": " +
+                    entry.GameIdentification;
+            }
+            title += "</color>";
+        }
+        return title;
+    }
+
+    private static string StateSuffix(string common) {
+        int open = common.LastIndexOf(" (", StringComparison.Ordinal);
+        return open >= 0 ? common.Substring(open) : string.Empty;
+    }
+
+    private static void CleanupDestroyedSnapshots() {
+        List<int> destroyed = null;
+        foreach (KeyValuePair<int, TextSnapshot> pair in Snapshots) {
+            if (pair.Value.Text != null) continue;
+            if (destroyed == null) destroyed = new List<int>();
+            destroyed.Add(pair.Key);
+        }
+        if (destroyed == null) return;
+        for (int i = 0; i < destroyed.Count; i++) Snapshots.Remove(destroyed[i]);
+    }
+}
