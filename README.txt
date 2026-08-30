@@ -1,11 +1,11 @@
-BOTANY DISCOVERY 2.1.0
+BOTANY DISCOVERY 2.1.1
 
 Botany Discovery enriches plant titles that already exist in the player's notebook.
 It does not unlock pages, reveal recipes, alter item effects, modify Green Hell saves,
 or transmit state over the cooperative network.
 
 FEATURES
-- 89 ItemIDs across 27 botanical species or groups.
+- 90 ItemIDs across 28 botanical species or groups.
 - Brazilian Portuguese, English and Spanish; English fallback.
 - Persistent common, scientific or combined display modes.
 - Inline, stacked and compact layouts.
@@ -15,6 +15,8 @@ FEATURES
 - Updated journal names for Chacrona (Psychotria viridis), Palmito-juçara
   (Euterpe edulis), Molineira (Molineria capitulata), and Favo de mel
   (Apis mellifera).
+- Identifies the cave mushroom as Língua-da-terra-verde
+  (Geoglossum viride).
 - Automatic refresh after the game applies a language.
 - Safe unload restores the native title and text settings.
 - Idempotent startup, patch diagnostics and game-version warning.

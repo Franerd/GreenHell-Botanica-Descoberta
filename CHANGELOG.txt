@@ -1,3 +1,9 @@
+2.1.1 - Cogumelo de cavernas
+- Identifica o ItemID geoglossum_viride exibido como Unknown Mushroom.
+- Exibe Língua-da-terra-verde (Geoglossum viride) no diário.
+- Mantém a alteração restrita ao título já descoberto, sem nutrientes,
+  desbloqueios, alterações de efeitos ou mudanças no save.
+
 2.1.0 - Novos nomes no diário
 - Adiciona interceptação alternativa para páginas nativas que não expõem um
   ItemID: Chacrona, Palmito e Molineira.

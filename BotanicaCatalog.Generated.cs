@@ -87,6 +87,7 @@ internal static partial class BotanicaCatalog {
         Add(new Entry("copa_hongo", "Taça-escarlate", "Scarlet cup mushroom", "Hongo copa escarlata", "Sarcoscypha coccinea", "copa_hongo", "alta", "", ""));
         Add(new Entry("copa_hongo_dryed", "Taça-escarlate (seca)", "Scarlet cup mushroom (dried)", "Hongo copa escarlata (seco)", "Sarcoscypha coccinea", "copa_hongo", "alta", "", ""));
         Add(new Entry("copa_hongo_Spoiled", "Taça-escarlate (estragada)", "Scarlet cup mushroom (spoiled)", "Hongo copa escarlata (estropeado)", "Sarcoscypha coccinea", "copa_hongo", "alta", "", ""));
+        Add(new Entry("geoglossum_viride", "Língua-da-terra-verde", "Green earthtongue", "Lengua de tierra verde", "Geoglossum viride", "geoglossum_viride", "alta", "Microglossum viride", "Unknown Mushroom"));
         Add(new Entry("marasmius_haematocephalus", "Capota-rosa", "Mauve parachute", "Marasmius morado", "Marasmius haematocephalus", "marasmius_haematocephalus", "alta", "", "Unknown Mushroom 7"));
         Add(new Entry("marasmius_haematocephalus_Dryed", "Capota-rosa (seca)", "Mauve parachute (dried)", "Marasmius morado (seco)", "Marasmius haematocephalus", "marasmius_haematocephalus", "alta", "", "Unknown Mushroom 7"));
         Add(new Entry("marasmius_haematocephalus_Spoiled", "Capota-rosa (estragada)", "Mauve parachute (spoiled)", "Marasmius morado (estropeado)", "Marasmius haematocephalus", "marasmius_haematocephalus", "alta", "", "Unknown Mushroom 7"));

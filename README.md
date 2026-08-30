@@ -2,9 +2,9 @@
 
 Botany Discovery enriches Green Hell notebook entries that the player has already discovered with localized common and scientific botanical names. It does not unlock pages, reveal recipes, change item effects, modify Green Hell saves, or transmit custom cooperative state.
 
-## Version 2.1.0
+## Version 2.1.1
 
-- 89 ItemIDs across 27 botanical species or groups.
+- 90 ItemIDs across 28 botanical species or groups.
 - Brazilian Portuguese, English and Spanish, with English fallback.
 - Persistent common, scientific, or combined display modes.
 - Inline, stacked, and compact layouts.
@@ -15,6 +15,8 @@ Botany Discovery enriches Green Hell notebook entries that the player has alread
 - Updated journal names for Chacrona (*Psychotria viridis*), Palmito-juçara
   (*Euterpe edulis*), Molineira (*Molineria capitulata*), and Favo de mel
   (*Apis mellifera*).
+- Identifies the cave mushroom as Língua-da-terra-verde
+  (*Geoglossum viride*).
 - Automatic refresh after Green Hell applies a language change.
 - Idempotent initialization and patch-target diagnostics.
 - Native title and layout restoration when the mod is unloaded.

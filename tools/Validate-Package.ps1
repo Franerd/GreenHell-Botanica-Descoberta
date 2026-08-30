@@ -7,7 +7,7 @@ $ErrorActionPreference = 'Stop'
 $catalogPath = Join-Path $ProjectDirectory 'botany-catalog.json'
 $catalog = Get-Content -LiteralPath $catalogPath -Raw | ConvertFrom-Json
 if ($catalog.schema -ne 2) { throw 'Catalog schema must be 2.' }
-if ($catalog.species.Count -ne 27) { throw "Expected 27 species/groups; found $($catalog.species.Count)." }
+if ($catalog.species.Count -ne 28) { throw "Expected 28 species/groups; found $($catalog.species.Count)." }
 
 $seen = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
 $allowedConfidence = @('alta', 'media_alta', 'media', 'alta_para_genero', 'baixa_para_especie')
@@ -26,7 +26,7 @@ foreach ($species in $catalog.species) {
         $count++
     }
 }
-if ($count -ne 89) { throw "Expected 89 ItemIDs; found $count." }
+if ($count -ne 90) { throw "Expected 90 ItemIDs; found $count." }
 
 $temporaryGenerated = Join-Path ([IO.Path]::GetTempPath()) ('BotanicaCatalog.Generated.' + [guid]::NewGuid().ToString('N') + '.cs')
 try {

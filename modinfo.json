@@ -2,7 +2,7 @@
   "name": "Botany Discovery",
   "author": "FraNerd",
   "description": "A safe local botanical field guide for discovered notebook entries, with common and scientific names, confidence notes, persistent display settings, and PT-BR, English and Spanish support.",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "license": "GNU AGPLv3",
   "icon": "icon.png",
   "banner": "banner.jpg",

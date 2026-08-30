@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BotanicaDescoberta : Mod {
     private const string HarmonyId = "com.franerd.greenhell.botany-discovery";
-    private const string Version = "2.1.0";
+    private const string Version = "2.1.1";
     private const string TargetGameVersion = "2.9.5";
     private static Harmony _harmony;
     private static bool _loaded;
@@ -123,7 +123,7 @@ public class BotanicaDescoberta : Mod {
         Debug.Log("[Botany Discovery] " + Version + " | Green Hell " +
             (string.IsNullOrEmpty(detectedGameVersion) ? "unknown" : detectedGameVersion) +
             " | package target " + TargetGameVersion +
-            " | catalog " + BotanicaCatalog.Count + "/89 | language " + BotanicaLocalization.LanguageCode +
+            " | catalog " + BotanicaCatalog.Count + "/90 | language " + BotanicaLocalization.LanguageCode +
             " | display " + BotanicaSettings.DisplayMode + " | layout " + BotanicaSettings.LayoutMode +
             " | details " + OnOff(BotanicaSettings.ShowDetails) + " | font fit " +
             OnOff(BotanicaSettings.AdaptiveFont) + " | tracked " + BotanicaRuntime.TrackedTitles +

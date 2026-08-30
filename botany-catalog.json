@@ -1044,6 +1044,25 @@
       ]
     },
     {
+      "key": "geoglossum_viride",
+      "commonNamePtBr": "língua-da-terra-verde",
+      "scientificName": "Geoglossum viride",
+      "confidence": "alta",
+      "taxonomicSynonym": "Microglossum viride",
+      "gameIdentification": "Unknown Mushroom",
+      "items": [
+        {
+          "id": "geoglossum_viride",
+          "scientific": "Geoglossum viride",
+          "names": {
+            "pt-BR": "Língua-da-terra-verde",
+            "en": "Green earthtongue",
+            "es": "Lengua de tierra verde"
+          }
+        }
+      ]
+    },
+    {
       "key": "marasmius_haematocephalus",
       "commonNamePtBr": "capota-rosa",
       "scientificName": "Marasmius haematocephalus",
