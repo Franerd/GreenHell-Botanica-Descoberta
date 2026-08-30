@@ -8,11 +8,14 @@ $ErrorActionPreference = 'Stop'
 & (Join-Path $ProjectDirectory 'tools\Validate-Package.ps1') `
     -ProjectDirectory $ProjectDirectory -GameDirectory $GameDirectory | Out-Host
 
+$manifest = Get-Content -LiteralPath (Join-Path $ProjectDirectory 'modinfo.json') -Raw | ConvertFrom-Json
+$packageBaseName = 'botany-discovery-' + $manifest.version
+
 New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null
 $staging = Join-Path ([IO.Path]::GetTempPath()) ('botany-discovery-' + [guid]::NewGuid().ToString('N'))
-$archive = Join-Path $OutputDirectory 'botany-discovery-2.0.0.zip'
-$package = Join-Path $OutputDirectory 'botany-discovery-2.0.0.ghmod'
-$sourceArchive = Join-Path $OutputDirectory 'botany-discovery-2.0.0-source.zip'
+$archive = Join-Path $OutputDirectory ($packageBaseName + '.zip')
+$package = Join-Path $OutputDirectory ($packageBaseName + '.ghmod')
+$sourceArchive = Join-Path $OutputDirectory ($packageBaseName + '-source.zip')
 
 try {
     New-Item -ItemType Directory -Path $staging | Out-Null
@@ -27,7 +30,10 @@ try {
     Compress-Archive -Path (Join-Path $staging '*') -DestinationPath $archive -CompressionLevel Optimal
     Move-Item -LiteralPath $archive -Destination $package
 
-    Compress-Archive -Path (Join-Path $ProjectDirectory '*') -DestinationPath $sourceArchive -CompressionLevel Optimal
+    $sourceItems = Get-ChildItem -LiteralPath $ProjectDirectory -Force | Where-Object {
+        $_.Name -notin @('.git', 'outputs')
+    }
+    Compress-Archive -Path $sourceItems.FullName -DestinationPath $sourceArchive -CompressionLevel Optimal
 } finally {
     if (Test-Path -LiteralPath $staging) { Remove-Item -LiteralPath $staging -Recurse -Force }
 }

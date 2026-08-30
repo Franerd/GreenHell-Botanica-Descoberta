@@ -1,31 +1,17 @@
-Unreleased
-- Added nutrition text directly to discovered notebook pages using native
-  ConsumableInfo carbohydrate, protein, fat and energy values.
-- Identified the heart-of-palm entry as palmito-juçara (Euterpe edulis).
-- Added an exact-title fallback for the native Chacrona, Palmito and Molineira
-  notebook pages, which do not expose a NotepadPlantTitleReplacer ItemID.
-- Restored existing notebook-title replacements for chacrona and palmito.
-- Added the runtime-confirmed Honeycomb notebook title as favo de mel
-  (Apis mellifera), localized as Honeycomb and Panal de miel.
-- Expanded the focused catalog to 89 ItemIDs across 27 groups.
+2.1.0 - Novos nomes no diário
+- Adiciona interceptação alternativa para páginas nativas que não expõem um
+  ItemID: Chacrona, Palmito e Molineira.
+- Identifica o palmito como Palmito-juçara (Euterpe edulis).
+- Identifica Chacrona como Psychotria viridis.
+- Identifica Molineira como Molineria capitulata.
+- Altera Mel para Favo de mel (Apis mellifera).
+- Mantém intactos os efeitos, as receitas, os desbloqueios e os saves do jogo.
+- A exibição experimental de nutrientes não faz parte desta versão.
 
-2.0.0
-- Normalized all 25 botanical groups to one Brazilian common name and one scientific name.
-- Removed displayed taxonomic synonyms and alternative game identifications.
-- Renamed the Monstera deliciosa fruit to banana-ananás in PT-BR.
-- Renamed cubiu entries to tomate-de-índio in PT-BR.
-- Added the cave fever mushroom as capota-rosa (Marasmius haematocephalus),
-  expanding the catalog to 88 ItemIDs across 26 groups.
-- Removed native-known palmito and chacrona entries from the replacement catalog;
-  the focused catalog now contains 80 ItemIDs across 24 groups.
-- Fixed game-version diagnostics to use GreenHellGame.s_GameVersion while keeping
-  modinfo.json gameVersion as the package compatibility target.
-- Rebuilt the catalog workflow around one validated JSON source.
-- Added persistent display, layout, language, detail and font-fit preferences.
-- Added italic scientific names, stacked/compact layouts and confidence notes.
-- Added automatic refresh after Green Hell applies a language.
-- Scoped normal notebook refreshes to the active Plants tab.
-- Added idempotent loading, patch-target diagnostics and version warnings.
-- Added full restoration of native title text and layout settings on unload.
-- Preserved local-only cooperative behavior and normal notebook discovery.
-- Added build-time validation and a complete in-game test matrix.
+2.0.0 - Catálogo botânico consolidado
+- Amplia o catálogo para 89 ItemIDs em 27 espécies ou grupos.
+- Adiciona nomes comuns e científicos localizados em português brasileiro,
+  inglês e espanhol.
+- Adiciona modos de exibição comum, científico e combinado, com layouts
+  em linha, empilhado e compacto.
+- Atualiza automaticamente os títulos quando o idioma do jogo é alterado.

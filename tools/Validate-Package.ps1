@@ -39,7 +39,10 @@ try {
 }
 
 $manifest = Get-Content -LiteralPath (Join-Path $ProjectDirectory 'modinfo.json') -Raw | ConvertFrom-Json
-if ($manifest.version -ne '2.0.0') { throw 'Manifest version must be 2.0.0.' }
+if ([string]$manifest.version -notmatch '^\d+\.\d+\.\d+$') { throw 'Manifest version must use semantic versioning.' }
+$entrySource = Get-Content -LiteralPath (Join-Path $ProjectDirectory 'BotanicaDescoberta.cs') -Raw
+$versionPattern = 'private const string Version = "' + [regex]::Escape([string]$manifest.version) + '";'
+if ($entrySource -notmatch $versionPattern) { throw 'Manifest and runtime versions must match.' }
 if ($manifest.gameVersion -ne '2.9.5') { throw 'Manifest gameVersion must be 2.9.5.' }
 
 $managed = Join-Path $GameDirectory 'GH_Data\Managed'
@@ -70,6 +73,7 @@ try {
     Species = $catalog.species.Count
     ItemIDs = $count
     Languages = $catalog.languages.Count
+    ModVersion = $manifest.version
     GeneratedFresh = $true
     CompileValidation = $true
 }

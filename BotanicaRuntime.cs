@@ -63,9 +63,7 @@ internal static class BotanicaRuntime {
             return false;
         }
 
-        bool applied = ApplyText(text, entry);
-        if (applied) BotanicaNutrition.Apply(text, replacer.m_ItemID);
-        return applied;
+        return ApplyText(text, entry);
     }
 
     private static bool ApplyText(Text text, BotanicaEntry entry) {
@@ -142,23 +140,11 @@ internal static class BotanicaRuntime {
             if (!NativeTitleEntries.TryGetValue(text.text.Trim(), out entry)) continue;
             if (ApplyText(text, entry)) {
                 changed++;
-                BotanicaNutrition.Apply(text, NativeNutritionItemId(entry.ItemId));
                 Debug.Log("[Botany Discovery] Native notebook title matched: " +
                     entry.ItemId + ".");
             }
         }
         return changed;
-    }
-
-    private static string NativeNutritionItemId(string nativeId) {
-        if (string.Equals(nativeId, "native:chacrona", StringComparison.OrdinalIgnoreCase))
-            return "psychotria_viridis";
-        if (string.Equals(nativeId, "native:palmito", StringComparison.OrdinalIgnoreCase))
-            return "Palm_heart";
-        if (string.Equals(nativeId, "native:molineira", StringComparison.OrdinalIgnoreCase) ||
-            string.Equals(nativeId, "native:molineria", StringComparison.OrdinalIgnoreCase))
-            return "Molineria_leaf";
-        return string.Empty;
     }
 
     internal static int RestoreAll() {

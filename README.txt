@@ -1,4 +1,4 @@
-BOTANY DISCOVERY 2.0.0
+BOTANY DISCOVERY 2.1.0
 
 Botany Discovery enriches plant titles that already exist in the player's notebook.
 It does not unlock pages, reveal recipes, alter item effects, modify Green Hell saves,
@@ -11,9 +11,10 @@ FEATURES
 - Inline, stacked and compact layouts.
 - Optional confidence and taxonomic-synonym notes.
 - Optional adaptive font sizing and italic scientific names.
-- Native carbohydrate, protein, fat and energy values written directly on
-  already discovered pages for consumable entries.
 - Exact-title fallback for native Chacrona, Palmito and Molineira pages.
+- Updated journal names for Chacrona (Psychotria viridis), Palmito-juçara
+  (Euterpe edulis), Molineira (Molineria capitulata), and Favo de mel
+  (Apis mellifera).
 - Automatic refresh after the game applies a language.
 - Safe unload restores the native title and text settings.
 - Idempotent startup, patch diagnostics and game-version warning.
