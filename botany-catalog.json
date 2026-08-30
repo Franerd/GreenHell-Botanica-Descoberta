@@ -470,6 +470,61 @@
       ]
     },
     {
+      "key": "psychotria",
+      "commonNamePtBr": "chacrona",
+      "scientificName": "Psychotria viridis",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "psychotria_viridis",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Folhas de chacrona",
+            "en": "Chacruna leaves",
+            "es": "Hojas de chacruna"
+          }
+        },
+        {
+          "id": "psychotria_viridis_Dryed",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Folhas de chacrona (secas)",
+            "en": "Chacruna leaves (dried)",
+            "es": "Hojas de chacruna (secas)"
+          }
+        },
+        {
+          "id": "psychotria_viridis_berries",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Bagas de chacrona",
+            "en": "Chacruna berries",
+            "es": "Bayas de chacruna"
+          }
+        },
+        {
+          "id": "psychotria_viridis_berries_Dryed",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Bagas de chacrona (secas)",
+            "en": "Chacruna berries (dried)",
+            "es": "Bayas de chacruna (secas)"
+          }
+        },
+        {
+          "id": "Psychotria_Seeds",
+          "scientific": "Psychotria viridis",
+          "names": {
+            "pt-BR": "Sementes de chacrona",
+            "en": "Chacruna seeds",
+            "es": "Semillas de chacruna"
+          }
+        }
+      ]
+    },
+    {
       "key": "banisteriopsis",
       "commonNamePtBr": "mariri",
       "scientificName": "Banisteriopsis caapi",
@@ -743,6 +798,62 @@
             "pt-BR": "Folha de figueira",
             "en": "Fig leaf",
             "es": "Hoja de higuera"
+          }
+        }
+      ]
+    },
+    {
+      "key": "honey",
+      "commonNamePtBr": "favo de mel",
+      "scientificName": "Apis mellifera",
+      "confidence": "media",
+      "taxonomicSynonym": "",
+      "gameIdentification": "Honeycomb",
+      "items": [
+        {
+          "id": "Honeycomb",
+          "scientific": "Apis mellifera",
+          "names": {
+            "pt-BR": "Favo de mel",
+            "en": "Honeycomb",
+            "es": "Panal de miel"
+          }
+        }
+      ]
+    },
+    {
+      "key": "palm_heart",
+      "commonNamePtBr": "palmito-juçara",
+      "scientificName": "Euterpe edulis",
+      "confidence": "alta",
+      "taxonomicSynonym": "",
+      "gameIdentification": "",
+      "items": [
+        {
+          "id": "Palm_heart",
+          "scientific": "Euterpe edulis",
+          "names": {
+            "pt-BR": "Palmito-juçara",
+            "en": "Heart of palm",
+            "es": "Palmito"
+          }
+        },
+        {
+          "id": "Palm_heart_Spoiled",
+          "scientific": "Euterpe edulis",
+          "names": {
+            "pt-BR": "Palmito-juçara (estragado)",
+            "en": "Heart of palm (spoiled)",
+            "es": "Palmito (estropeado)"
+          }
+        },
+        {
+          "id": "Palm_Heart_dryed",
+          "scientific": "Euterpe edulis",
+          "names": {
+            "pt-BR": "Palmito-juçara (seco)",
+            "en": "Heart of palm (dried)",
+            "es": "Palmito (seco)"
           }
         }
       ]

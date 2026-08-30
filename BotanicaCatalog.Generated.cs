@@ -41,6 +41,11 @@ internal static partial class BotanicaCatalog {
         Add(new Entry("tobacco_flowers", "Flor de tabaco", "Tobacco flower", "Flor de tabaco", "Nicotiana tabacum", "tobacco", "alta", "", ""));
         Add(new Entry("tobacco_flowers_Dryed", "Flor de tabaco (seca)", "Tobacco flower (dried)", "Flor de tabaco (seca)", "Nicotiana tabacum", "tobacco", "alta", "", ""));
         Add(new Entry("Tobacco_Seeds", "Sementes de tabaco", "Tobacco seeds", "Semillas de tabaco", "Nicotiana tabacum", "tobacco", "alta", "", ""));
+        Add(new Entry("psychotria_viridis", "Folhas de chacrona", "Chacruna leaves", "Hojas de chacruna", "Psychotria viridis", "psychotria", "alta", "", ""));
+        Add(new Entry("psychotria_viridis_Dryed", "Folhas de chacrona (secas)", "Chacruna leaves (dried)", "Hojas de chacruna (secas)", "Psychotria viridis", "psychotria", "alta", "", ""));
+        Add(new Entry("psychotria_viridis_berries", "Bagas de chacrona", "Chacruna berries", "Bayas de chacruna", "Psychotria viridis", "psychotria", "alta", "", ""));
+        Add(new Entry("psychotria_viridis_berries_Dryed", "Bagas de chacrona (secas)", "Chacruna berries (dried)", "Bayas de chacruna (secas)", "Psychotria viridis", "psychotria", "alta", "", ""));
+        Add(new Entry("Psychotria_Seeds", "Sementes de chacrona", "Chacruna seeds", "Semillas de chacruna", "Psychotria viridis", "psychotria", "alta", "", ""));
         Add(new Entry("banisteriopsis_scraps", "Fragmentos de mariri", "Caapi vine scraps", "Fragmentos de liana caapi", "Banisteriopsis caapi", "banisteriopsis", "alta", "", ""));
         Add(new Entry("coca_leafs", "Folhas de coca", "Coca leaves", "Hojas de coca", "Erythroxylum coca", "coca", "alta", "", ""));
         Add(new Entry("Brazil_nut_whole", "Ouriço de castanha-do-brasil", "Brazil nut pod", "Cápsula de nuez de Brasil", "Bertholletia excelsa", "brazil_nut", "alta", "", ""));
@@ -63,6 +68,10 @@ internal static partial class BotanicaCatalog {
         Add(new Entry("Coconut_Shell_Flesh_Spoiled", "Meio coco com polpa (estragada)", "Coconut half with flesh (spoiled)", "Medio coco con pulpa (estropeada)", "Cocos nucifera", "coconut", "alta", "", ""));
         Add(new Entry("lily_flower", "Flor de ninfeia", "Water lily flower", "Flor de nenúfar", "Nymphaea spp.", "water_lily", "alta_para_genero", "", ""));
         Add(new Entry("Ficus_leaf", "Folha de figueira", "Fig leaf", "Hoja de higuera", "Ficus spp.", "ficus", "alta_para_genero", "", ""));
+        Add(new Entry("Honeycomb", "Favo de mel", "Honeycomb", "Panal de miel", "Apis mellifera", "honey", "media", "", "Honeycomb"));
+        Add(new Entry("Palm_heart", "Palmito-juçara", "Heart of palm", "Palmito", "Euterpe edulis", "palm_heart", "alta", "", ""));
+        Add(new Entry("Palm_heart_Spoiled", "Palmito-juçara (estragado)", "Heart of palm (spoiled)", "Palmito (estropeado)", "Euterpe edulis", "palm_heart", "alta", "", ""));
+        Add(new Entry("Palm_Heart_dryed", "Palmito-juçara (seco)", "Heart of palm (dried)", "Palmito (seco)", "Euterpe edulis", "palm_heart", "alta", "", ""));
         Add(new Entry("Phallus_indusiatus", "Cogumelo véu-de-noiva", "Veiled lady mushroom", "Hongo velo de novia", "Phallus indusiatus", "phallus_indusiatus", "alta", "", ""));
         Add(new Entry("Phallus_indusiatus_Dryed", "Cogumelo véu-de-noiva (seco)", "Veiled lady mushroom (dried)", "Hongo velo de novia (seco)", "Phallus indusiatus", "phallus_indusiatus", "alta", "", ""));
         Add(new Entry("Phallus_indusiatus_Spoiled", "Cogumelo véu-de-noiva (estragado)", "Veiled lady mushroom (spoiled)", "Hongo velo de novia (estropeado)", "Phallus indusiatus", "phallus_indusiatus", "alta", "", ""));

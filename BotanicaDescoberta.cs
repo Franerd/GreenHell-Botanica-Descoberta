@@ -47,10 +47,12 @@ public class BotanicaDescoberta : Mod {
 
     public void OnModUnload() {
         int restored = BotanicaRuntime.RestoreAll();
+        int nutritionRemoved = BotanicaNutrition.RestoreAll();
         if (_harmony != null) _harmony.UnpatchAll(HarmonyId);
         _harmony = null;
         _loaded = false;
-        Debug.Log("[Botany Discovery] Unloaded; native titles restored: " + restored + ".");
+        Debug.Log("[Botany Discovery] Unloaded; native titles restored: " + restored +
+            "; nutrition panels removed: " + nutritionRemoved + ".");
     }
 
     [ConsoleCommand("botany", "Botanical notebook names and local field-guide settings")]
@@ -123,10 +125,11 @@ public class BotanicaDescoberta : Mod {
         Debug.Log("[Botany Discovery] " + Version + " | Green Hell " +
             (string.IsNullOrEmpty(detectedGameVersion) ? "unknown" : detectedGameVersion) +
             " | package target " + TargetGameVersion +
-            " | catalog " + BotanicaCatalog.Count + "/80 | language " + BotanicaLocalization.LanguageCode +
+            " | catalog " + BotanicaCatalog.Count + "/89 | language " + BotanicaLocalization.LanguageCode +
             " | display " + BotanicaSettings.DisplayMode + " | layout " + BotanicaSettings.LayoutMode +
             " | details " + OnOff(BotanicaSettings.ShowDetails) + " | font fit " +
             OnOff(BotanicaSettings.AdaptiveFont) + " | tracked " + BotanicaRuntime.TrackedTitles +
+            " | nutrition panels " + BotanicaNutrition.TrackedPanels +
             " | applications " + BotanicaRuntime.TitlesApplied + ".");
         Debug.Log(Local(
             "Somente textos e preferências locais; nenhum desbloqueio, save ou estado de rede é alterado.",

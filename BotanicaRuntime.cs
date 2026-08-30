@@ -20,6 +20,19 @@ internal static class BotanicaRuntime {
         new HashSet<string>(StringComparer.OrdinalIgnoreCase);
     private static readonly HashSet<string> ReportedMissingTexts =
         new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+    private static readonly Dictionary<string, BotanicaEntry> NativeTitleEntries =
+        new Dictionary<string, BotanicaEntry>(StringComparer.OrdinalIgnoreCase) {
+            { "chacrona", new BotanicaEntry("native:chacrona", "Chacrona", "Chacruna",
+                "Chacruna", "Psychotria viridis", "psychotria", "alta", "", "") },
+            { "palmito", new BotanicaEntry("native:palmito", "Palmito-juçara", "Heart of palm",
+                "Palmito", "Euterpe edulis", "palm_heart", "alta", "", "") },
+            { "molineira", new BotanicaEntry("native:molineira", "Molineira", "Molineria",
+                "Molineria", "Molineria capitulata", "molineria", "media",
+                "Curculigo capitulata", "") },
+            { "molineria", new BotanicaEntry("native:molineria", "Molineira", "Molineria",
+                "Molineria", "Molineria capitulata", "molineria", "media",
+                "Curculigo capitulata", "") }
+        };
 
     private static int _titlesApplied;
     private static int _unknownItemIds;
@@ -50,6 +63,12 @@ internal static class BotanicaRuntime {
             return false;
         }
 
+        bool applied = ApplyText(text, entry);
+        if (applied) BotanicaNutrition.Apply(text, replacer.m_ItemID);
+        return applied;
+    }
+
+    private static bool ApplyText(Text text, BotanicaEntry entry) {
         int id = text.GetInstanceID();
         TextSnapshot snapshot;
         if (!Snapshots.TryGetValue(id, out snapshot)) {
@@ -92,6 +111,10 @@ internal static class BotanicaRuntime {
         for (int i = 0; replacers != null && i < replacers.Length; i++) {
             if (Apply(replacers[i])) changed++;
         }
+        PlantsTab[] tabs = Resources.FindObjectsOfTypeAll<PlantsTab>();
+        for (int i = 0; tabs != null && i < tabs.Length; i++) {
+            changed += ApplyNativeTitles(tabs[i]);
+        }
         CleanupDestroyedSnapshots();
         return changed;
     }
@@ -104,8 +127,38 @@ internal static class BotanicaRuntime {
         for (int i = 0; replacers != null && i < replacers.Length; i++) {
             if (Apply(replacers[i])) changed++;
         }
+        changed += ApplyNativeTitles(tab);
         CleanupDestroyedSnapshots();
         return changed;
+    }
+
+    private static int ApplyNativeTitles(PlantsTab tab) {
+        int changed = 0;
+        Text[] texts = tab.GetComponentsInChildren<Text>(true);
+        for (int i = 0; texts != null && i < texts.Length; i++) {
+            Text text = texts[i];
+            if (text == null || string.IsNullOrWhiteSpace(text.text)) continue;
+            BotanicaEntry entry;
+            if (!NativeTitleEntries.TryGetValue(text.text.Trim(), out entry)) continue;
+            if (ApplyText(text, entry)) {
+                changed++;
+                BotanicaNutrition.Apply(text, NativeNutritionItemId(entry.ItemId));
+                Debug.Log("[Botany Discovery] Native notebook title matched: " +
+                    entry.ItemId + ".");
+            }
+        }
+        return changed;
+    }
+
+    private static string NativeNutritionItemId(string nativeId) {
+        if (string.Equals(nativeId, "native:chacrona", StringComparison.OrdinalIgnoreCase))
+            return "psychotria_viridis";
+        if (string.Equals(nativeId, "native:palmito", StringComparison.OrdinalIgnoreCase))
+            return "Palm_heart";
+        if (string.Equals(nativeId, "native:molineira", StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(nativeId, "native:molineria", StringComparison.OrdinalIgnoreCase))
+            return "Molineria_leaf";
+        return string.Empty;
     }
 
     internal static int RestoreAll() {

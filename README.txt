@@ -5,12 +5,15 @@ It does not unlock pages, reveal recipes, alter item effects, modify Green Hell 
 or transmit state over the cooperative network.
 
 FEATURES
-- 80 ItemIDs across 24 botanical species or groups.
+- 89 ItemIDs across 27 botanical species or groups.
 - Brazilian Portuguese, English and Spanish; English fallback.
 - Persistent common, scientific or combined display modes.
 - Inline, stacked and compact layouts.
 - Optional confidence and taxonomic-synonym notes.
 - Optional adaptive font sizing and italic scientific names.
+- Native carbohydrate, protein, fat and energy values written directly on
+  already discovered pages for consumable entries.
+- Exact-title fallback for native Chacrona, Palmito and Molineira pages.
 - Automatic refresh after the game applies a language.
 - Safe unload restores the native title and text settings.
 - Idempotent startup, patch diagnostics and game-version warning.

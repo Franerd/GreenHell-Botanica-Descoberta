@@ -4,12 +4,16 @@ Botany Discovery enriches Green Hell notebook entries that the player has alread
 
 ## Version 2.0.0
 
-- 80 ItemIDs across 24 botanical species or groups.
+- 89 ItemIDs across 27 botanical species or groups.
 - Brazilian Portuguese, English and Spanish, with English fallback.
 - Persistent common, scientific, or combined display modes.
 - Inline, stacked, and compact layouts.
 - Italic scientific names and optional adaptive font sizing.
 - Optional identification-confidence, synonym, and in-game-name notes.
+- Native carbohydrate, protein, fat and energy values written directly on
+  already discovered notebook pages for consumable entries.
+- Exact-title fallback for native Chacrona, Palmito and Molineira pages that do
+  not expose a notebook ItemID component.
 - Automatic refresh after Green Hell applies a language change.
 - Idempotent initialization and patch-target diagnostics.
 - Native title and layout restoration when the mod is unloaded.

@@ -22,5 +22,6 @@ namespace HarmonyLib {
 
     public static class AccessTools {
         public static MethodInfo Method(Type type, string name) { return null; }
+        public static FieldInfo Field(Type type, string name) { return null; }
     }
 }
