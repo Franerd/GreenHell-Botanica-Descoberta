@@ -19,9 +19,24 @@ $sourceArchive = Join-Path $OutputDirectory ($packageBaseName + '-source.zip')
 
 try {
     New-Item -ItemType Directory -Path $staging | Out-Null
-    Get-ChildItem -LiteralPath $ProjectDirectory -File | Where-Object {
-        $_.Extension -in @('.cs', '.json', '.txt', '.png', '.jpg')
-    } | Copy-Item -Destination $staging
+    $runtimeFiles = @(
+        'BotanicaCatalog.cs',
+        'BotanicaCatalog.Generated.cs',
+        'BotanicaDescoberta.cs',
+        'BotanicaLocalization.cs',
+        'BotanicaRuntime.cs',
+        'BotanicaSettings.cs',
+        'modinfo.json',
+        'icon.png',
+        'banner.jpg'
+    )
+    foreach ($runtimeFile in $runtimeFiles) {
+        $runtimePath = Join-Path $ProjectDirectory $runtimeFile
+        if (-not (Test-Path -LiteralPath $runtimePath -PathType Leaf)) {
+            throw "Required runtime file is missing: $runtimeFile"
+        }
+        Copy-Item -LiteralPath $runtimePath -Destination $staging
+    }
 
     if (Test-Path -LiteralPath $archive) { Remove-Item -LiteralPath $archive -Force }
     if (Test-Path -LiteralPath $package) { Remove-Item -LiteralPath $package -Force }
@@ -29,6 +44,18 @@ try {
 
     Compress-Archive -Path (Join-Path $staging '*') -DestinationPath $archive -CompressionLevel Optimal
     Move-Item -LiteralPath $archive -Destination $package
+
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $packageArchive = [IO.Compression.ZipFile]::OpenRead($package)
+    try {
+        $packagedFiles = @($packageArchive.Entries | ForEach-Object FullName | Sort-Object)
+        $expectedFiles = @($runtimeFiles | Sort-Object)
+        if (Compare-Object $expectedFiles $packagedFiles) {
+            throw 'Runtime package contents differ from the approved file list.'
+        }
+    } finally {
+        $packageArchive.Dispose()
+    }
 
     $sourceItems = Get-ChildItem -LiteralPath $ProjectDirectory -Force | Where-Object {
         $_.Name -notin @('.git', 'outputs')

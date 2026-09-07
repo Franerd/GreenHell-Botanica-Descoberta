@@ -1,10 +1,18 @@
 BOTANY DISCOVERY 2.2.0
 
 Botany Discovery enriches plant titles that already exist in the player's notebook.
-When the local player is the host or is playing alone, discovered botanical items also
-use these names in world and inventory-facing text. Guests remain notebook-only. The
-mod does not unlock pages, reveal recipes, alter item effects, modify Green Hell saves,
-or transmit state over the cooperative network.
+
+GUEST CLIENT
+- Keeps the complete notebook feature set from the previous release.
+- World, inventory and pickup names remain completely native.
+
+HOST OR SINGLE-PLAYER
+- Keeps the same notebook features.
+- Adds botanical names to collected items in world prompts, inventory and pickup text.
+- Cataloged seeds are named on first pickup even without a notebook page.
+
+Unknown items remain unknown before collection. The mod does not unlock pages, reveal
+recipes, alter item effects, modify Green Hell saves, or transmit custom network state.
 
 FEATURES
 - 90 ItemIDs across 28 botanical species or groups.

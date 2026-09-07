@@ -1,6 +1,16 @@
 # Botany Discovery
 
-Botany Discovery enriches Green Hell notebook entries that the player has already discovered with localized common and scientific botanical names. It does not unlock pages, reveal recipes, change item effects, modify Green Hell saves, or transmit custom cooperative state.
+Botany Discovery enriches Green Hell notebook entries that the player has already discovered with localized common and scientific botanical names. Its behavior deliberately changes with the local player's session role.
+
+## Behavior by session role
+
+| Local player | Notebook | World, inventory and pickup text |
+| --- | --- | --- |
+| Guest client | Names already discovered entries | Remains completely native |
+| Multiplayer host | Names already discovered entries | Names cataloged items after collection |
+| Single-player | Names already discovered entries | Names cataloged items after collection |
+
+Cataloged seeds are named on their first pickup and afterwards even if they do not have a notebook page. Before collection, unknown items remain unknown. The mod never unlocks pages or item information, reveals recipes, changes item effects, modifies Green Hell saves, or transmits custom cooperative state.
 
 ## Version 2.2.0
 
@@ -47,11 +57,16 @@ The legacy `botanica` command and Portuguese/Spanish aliases remain supported. P
 
 `botany-catalog.json` is the single editable catalog source. `BotanicaCatalog.Generated.cs` is generated from it and must not be edited manually. The validation tooling checks the schema, language coverage, duplicate ItemIDs, scientific-name consistency, expected counts, generated-code freshness, and compilation against the installed Green Hell 2.9.5 assemblies.
 
+The runtime boundaries, authority model, package allowlist, and release checks are
+documented in [ARCHITECTURE.md](ARCHITECTURE.md).
+
 ## Compatibility and testing
 
 - Target: Green Hell 2.9.5.
 - Notebook behavior is local for host and client. World-name replacement runs only for
   the host or single-player and does not replicate custom state.
+- A guest installation retains the complete 2.1.x notebook feature set; only the new
+  2.2.0 world-name layer is disabled for guests.
 - The mod never adds notebook pages or ItemIDs to Green Hell's discovered-item lists.
 - Cooperative entry, automatic title application, unload, reload, and common/scientific rendering have been tested successfully.
 - `TEST-MATRIX.txt` tracks the remaining language, layout, save/load, reconnect, and mixed-installation scenarios.

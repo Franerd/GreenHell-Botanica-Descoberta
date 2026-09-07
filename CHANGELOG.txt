@@ -13,6 +13,8 @@
 - Registra uma única confirmação por ItemID nomeado no mundo para diagnóstico.
 - Usa `Application.version` como fallback quando a versão nativa ainda não foi
   inicializada e mantém `version.txt` no GitHub como fonte de atualização.
+- Reduz o `.ghmod` aos arquivos necessários em runtime e valida sua lista interna.
+- Esclarece separadamente o comportamento de cliente convidado, host e single-player.
 - Não altera desbloqueios, saves nem estado replicado.
 
 2.1.1 - Cogumelo de cavernas
