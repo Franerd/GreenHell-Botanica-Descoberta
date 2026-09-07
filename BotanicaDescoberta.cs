@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BotanicaDescoberta : Mod {
     private const string HarmonyId = "com.franerd.greenhell.botany-discovery";
-    private const string Version = "2.1.1";
+    private const string Version = "2.2.0";
     private const string TargetGameVersion = "2.9.5";
     private static Harmony _harmony;
     private static bool _loaded;
@@ -127,7 +127,9 @@ public class BotanicaDescoberta : Mod {
             " | display " + BotanicaSettings.DisplayMode + " | layout " + BotanicaSettings.LayoutMode +
             " | details " + OnOff(BotanicaSettings.ShowDetails) + " | font fit " +
             OnOff(BotanicaSettings.AdaptiveFont) + " | tracked " + BotanicaRuntime.TrackedTitles +
-            " | applications " + BotanicaRuntime.TitlesApplied + ".");
+            " | applications " + BotanicaRuntime.TitlesApplied + " | world names " +
+            (BotanicaRuntime.WorldNamesEnabled ? "host/solo" : "notebook-only") +
+            " | world applications " + BotanicaRuntime.WorldNamesApplied + ".");
         Debug.Log(Local(
             "Somente textos e preferências locais; nenhum desbloqueio, save ou estado de rede é alterado.",
             "Local text and preferences only; no unlock, save, or network state is changed.",
@@ -147,6 +149,12 @@ public class BotanicaDescoberta : Mod {
         valid &= CheckTarget(typeof(PlantsTab), "Init");
         valid &= CheckTarget(typeof(PlantsTab), "OnEnable");
         valid &= CheckTarget(typeof(GameSettings), "ApplyLanguage");
+        valid &= CheckTarget(typeof(ItemInfo), "GetNameToDisplayLocalized");
+        valid &= CheckTarget(typeof(Item), "GetTriggerInfoLocalized");
+        valid &= CheckTarget(typeof(Item), "OnTake");
+        valid &= CheckTarget(typeof(ItemReplacer), "GetTriggerInfoLocalized");
+        valid &= CheckTarget(typeof(PlantFruit), "GetTriggerInfoLocalized");
+        valid &= CheckTarget(typeof(ShelfSet), "GetTriggerInfoLocalized");
         return valid;
     }
 
@@ -159,17 +167,23 @@ public class BotanicaDescoberta : Mod {
     private static string GetDetectedGameVersion() {
         try {
             GameVersion version = GreenHellGame.s_GameVersion;
-            if (version == null) return string.Empty;
-            string official = version.ToStringOfficial();
-            if (string.IsNullOrEmpty(official)) return string.Empty;
-            official = official.Trim();
-            if (official.StartsWith("V", StringComparison.OrdinalIgnoreCase))
-                official = official.Substring(1);
-            return official.Replace(',', '.');
-        } catch (Exception exception) {
-            Debug.LogWarning("[Botany Discovery] Native game-version lookup unavailable: " + exception.Message);
-            return string.Empty;
-        }
+            if (version != null) {
+                string official = NormalizeGameVersion(version.ToStringOfficial());
+                if (!string.IsNullOrEmpty(official)) return official;
+            }
+        } catch { }
+
+        try {
+            return NormalizeGameVersion(Application.version);
+        } catch { return string.Empty; }
+    }
+
+    private static string NormalizeGameVersion(string value) {
+        if (string.IsNullOrWhiteSpace(value)) return string.Empty;
+        value = value.Trim();
+        if (value.StartsWith("V", StringComparison.OrdinalIgnoreCase))
+            value = value.Substring(1);
+        return value.Replace(',', '.');
     }
 
     private static bool TryReadToggle(string value, out bool enabled) {
@@ -182,6 +196,57 @@ public class BotanicaDescoberta : Mod {
 
     private static string OnOff(bool value) { return value ? "on" : "off"; }
     private static string Local(string pt, string en, string es) { return BotanicaLocalization.Message(pt, en, es); }
+}
+
+[HarmonyPatch(typeof(Item), "OnTake")]
+internal static class BotanicaItemCollectionPatch {
+    private static void Prefix(Item __instance) {
+        BotanicaRuntime.BeginCollection(__instance);
+    }
+
+    private static void Postfix(Item __instance) {
+        BotanicaRuntime.EndCollection(__instance);
+    }
+}
+
+[HarmonyPatch(typeof(ItemInfo), "GetNameToDisplayLocalized")]
+internal static class BotanicaItemInfoNamePatch {
+    private static void Postfix(ItemInfo __instance, ref string __result) {
+        BotanicaRuntime.ApplyWorldName(__instance, ref __result, __instance.m_ID.ToString());
+    }
+}
+
+[HarmonyPatch(typeof(Item), "GetTriggerInfoLocalized")]
+internal static class BotanicaItemWorldNamePatch {
+    private static void Postfix(Item __instance, ref string __result) {
+        if (__instance == null || __instance.m_Info == null) return;
+        BotanicaRuntime.ApplyWorldName(__instance.m_Info, ref __result, __instance.GetName());
+    }
+}
+
+[HarmonyPatch(typeof(ItemReplacer), "GetTriggerInfoLocalized")]
+internal static class BotanicaItemReplacerWorldNamePatch {
+    private static void Postfix(ItemReplacer __instance, ref string __result) {
+        if (__instance == null || __instance.m_ReplaceInfo == null) return;
+        BotanicaRuntime.ApplyWorldName(__instance.m_ReplaceInfo, ref __result, __instance.GetName());
+    }
+}
+
+[HarmonyPatch(typeof(PlantFruit), "GetTriggerInfoLocalized")]
+internal static class BotanicaPlantFruitWorldNamePatch {
+    private static void Postfix(PlantFruit __instance, ref string __result) {
+        if (__instance == null || __instance.m_ItemInfo == null) return;
+        BotanicaRuntime.ApplyWorldName(__instance.m_ItemInfo, ref __result, __instance.GetName());
+    }
+}
+
+[HarmonyPatch(typeof(ShelfSet), "GetTriggerInfoLocalized")]
+internal static class BotanicaShelfSetWorldNamePatch {
+    private static void Postfix(ShelfSet __instance, ref string __result) {
+        if (__instance == null || __instance.m_ItemInfo == null) return;
+        BotanicaRuntime.ApplyWorldName(__instance.m_ItemInfo, ref __result,
+            __instance.m_ItemInfo.m_ID.ToString());
+    }
 }
 
 [HarmonyPatch(typeof(NotepadPlantTitleReplacer), "OnEnable")]

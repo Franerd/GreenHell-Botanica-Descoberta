@@ -2,7 +2,7 @@
 
 Botany Discovery enriches Green Hell notebook entries that the player has already discovered with localized common and scientific botanical names. It does not unlock pages, reveal recipes, change item effects, modify Green Hell saves, or transmit custom cooperative state.
 
-## Version 2.1.1
+## Version 2.2.0
 
 - 90 ItemIDs across 28 botanical species or groups.
 - Brazilian Portuguese, English and Spanish, with English fallback.
@@ -21,6 +21,12 @@ Botany Discovery enriches Green Hell notebook entries that the player has alread
 - Idempotent initialization and patch-target diagnostics.
 - Native title and layout restoration when the mod is unloaded.
 - Native Green Hell version detection, distinct from the package target in `modinfo.json`.
+- Botanical names in world prompts, inventory-facing names, pickup messages, plant
+  replacers, fruits, and shelf sets when the local player is the host or is playing alone.
+- Guests remain notebook-only. Unknown items keep Green Hell's native unidentified name
+  until the game itself marks them as discovered.
+- Cataloged unknown seeds receive their botanical name in the first pickup message and
+  subsequent world/inventory text, even when they have no notebook page.
 
 ## Commands
 
@@ -44,7 +50,9 @@ The legacy `botanica` command and Portuguese/Spanish aliases remain supported. P
 ## Compatibility and testing
 
 - Target: Green Hell 2.9.5.
-- Local-only behavior for host and client.
+- Notebook behavior is local for host and client. World-name replacement runs only for
+  the host or single-player and does not replicate custom state.
+- The mod never adds notebook pages or ItemIDs to Green Hell's discovered-item lists.
 - Cooperative entry, automatic title application, unload, reload, and common/scientific rendering have been tested successfully.
 - `TEST-MATRIX.txt` tracks the remaining language, layout, save/load, reconnect, and mixed-installation scenarios.
 

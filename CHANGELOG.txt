@@ -1,3 +1,20 @@
+2.2.0 - Nomes botânicos no mundo para o host
+- Exibe nomes botânicos em textos de itens no mundo, inventário e coleta quando
+  o jogador local é host ou está em uma partida solo.
+- Mantém clientes convidados restritos aos nomes do diário.
+- Respeita o bloqueio nativo de identificação: itens desconhecidos continuam
+  desconhecidos até serem descobertos pelo próprio jogo.
+- Usa o histórico nativo de coleta (`WasCollected`) como fonte de descoberta,
+  cobrindo itens apanhados do chão e colhidos de plantas.
+- Substitui também o rótulo desconhecido nativo depois da primeira coleta,
+  preservando sufixos de estado, quantidade e capacidade.
+- Nomeia sementes catalogadas já na mensagem da primeira coleta, mesmo quando não
+  existe uma página correspondente no diário.
+- Registra uma única confirmação por ItemID nomeado no mundo para diagnóstico.
+- Usa `Application.version` como fallback quando a versão nativa ainda não foi
+  inicializada e mantém `version.txt` no GitHub como fonte de atualização.
+- Não altera desbloqueios, saves nem estado replicado.
+
 2.1.1 - Cogumelo de cavernas
 - Identifica o ItemID geoglossum_viride exibido como Unknown Mushroom.
 - Exibe Língua-da-terra-verde (Geoglossum viride) no diário.

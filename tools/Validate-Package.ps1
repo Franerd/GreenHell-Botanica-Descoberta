@@ -40,6 +40,8 @@ try {
 
 $manifest = Get-Content -LiteralPath (Join-Path $ProjectDirectory 'modinfo.json') -Raw | ConvertFrom-Json
 if ([string]$manifest.version -notmatch '^\d+\.\d+\.\d+$') { throw 'Manifest version must use semantic versioning.' }
+$publishedVersion = (Get-Content -LiteralPath (Join-Path $ProjectDirectory 'version.txt') -Raw).Trim()
+if ($publishedVersion -ne [string]$manifest.version) { throw 'version.txt and manifest versions must match.' }
 $entrySource = Get-Content -LiteralPath (Join-Path $ProjectDirectory 'BotanicaDescoberta.cs') -Raw
 $versionPattern = 'private const string Version = "' + [regex]::Escape([string]$manifest.version) + '";'
 if ($entrySource -notmatch $versionPattern) { throw 'Manifest and runtime versions must match.' }
@@ -74,6 +76,7 @@ try {
     ItemIDs = $count
     Languages = $catalog.languages.Count
     ModVersion = $manifest.version
+    PublishedVersion = $publishedVersion
     GeneratedFresh = $true
     CompileValidation = $true
 }

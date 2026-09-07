@@ -1,7 +1,9 @@
-BOTANY DISCOVERY 2.1.1
+BOTANY DISCOVERY 2.2.0
 
 Botany Discovery enriches plant titles that already exist in the player's notebook.
-It does not unlock pages, reveal recipes, alter item effects, modify Green Hell saves,
+When the local player is the host or is playing alone, discovered botanical items also
+use these names in world and inventory-facing text. Guests remain notebook-only. The
+mod does not unlock pages, reveal recipes, alter item effects, modify Green Hell saves,
 or transmit state over the cooperative network.
 
 FEATURES
@@ -21,6 +23,9 @@ FEATURES
 - Safe unload restores the native title and text settings.
 - Idempotent startup, patch diagnostics and game-version warning.
 - Native game-version detection, distinct from the package target in modinfo.json.
+- Host/single-player world names that respect Green Hell's native discovery state.
+- Unknown items retain their native unidentified name until the game discovers them.
+- Cataloged seeds are named on first pickup and afterwards, even without a notebook page.
 
 COMMANDS
 botany status

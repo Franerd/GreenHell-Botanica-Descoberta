@@ -1,14 +1,19 @@
-BOTANY DISCOVERY 2.0.0 - IN-GAME RELEASE MATRIX
+BOTANY DISCOVERY 2.2.0 - IN-GAME RELEASE MATRIX
 
 [ ] New survival session: only already discovered notebook pages are changed.
 [ ] Existing save: known pages display names; save timestamp/data are otherwise unaffected.
 [ ] Save and reload: Green Hell progression remains unchanged; preferences persist.
-[ ] Host: titles render locally and no network errors are logged.
-[ ] Client: titles render locally and no host installation is required.
-[ ] Late join and reconnect: notebook reconstructs and titles reapply.
+[ ] Host: known botanical items use catalog names in world prompts and inventory-facing text.
+[ ] Host: an uncollected/unknown botanical item retains Green Hell's unidentified name.
+[ ] Host: a cataloged unknown seed is named in its first pickup message.
+[ ] Host: a collected seed remains named in world/inventory even without a notebook page.
+[ ] Single-player: known world items use catalog names; unknown items stay unidentified.
+[ ] Client: world item names remain native and notebook titles still render locally.
+[ ] Late join and reconnect: client stays notebook-only and host world names remain active.
+[ ] Host migration: the new authority gains world names; the former authority loses them.
 [ ] Death/respawn: notebook titles remain correct.
 [ ] Scene and mode changes: no duplicate patches or stale title objects.
-[ ] PT-BR, English and Spanish: automatic detection and all 80 entries render.
+[ ] PT-BR, English and Spanish: automatic detection and all 90 entries render.
 [ ] Language change during session: visible titles refresh after ApplyLanguage.
 [ ] Common, scientific and both modes: cooked/dried/spoiled state suffixes remain visible.
 [ ] Inline, stacked and compact at 16:9, ultrawide and minimum supported resolution.
@@ -17,5 +22,5 @@ BOTANY DISCOVERY 2.0.0 - IN-GAME RELEASE MATRIX
 [ ] Disable/unload while notebook is open: native titles return immediately.
 [ ] Reload mod: initialization is single and status counters are sane.
 [ ] Green Hell version mismatch: warning is visible and the game remains usable.
-[ ] Console `botany status`: reports catalog 80/80 and expected configuration.
+[ ] Console `botany status`: reports catalog 90/90 and expected configuration.
 [ ] Unity log: no Harmony exception, missing target or repeated unknown ItemID warning.

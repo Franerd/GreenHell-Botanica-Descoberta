@@ -20,6 +20,9 @@ internal static class BotanicaRuntime {
         new HashSet<string>(StringComparer.OrdinalIgnoreCase);
     private static readonly HashSet<string> ReportedMissingTexts =
         new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+    private static readonly HashSet<string> ReportedWorldItemIds =
+        new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+    private static readonly HashSet<int> CollectionsInProgress = new HashSet<int>();
     private static readonly Dictionary<string, BotanicaEntry> NativeTitleEntries =
         new Dictionary<string, BotanicaEntry>(StringComparer.OrdinalIgnoreCase) {
             { "chacrona", new BotanicaEntry("native:chacrona", "Chacrona", "Chacruna",
@@ -36,10 +39,33 @@ internal static class BotanicaRuntime {
 
     private static int _titlesApplied;
     private static int _unknownItemIds;
+    private static int _worldNamesApplied;
 
     internal static int TitlesApplied { get { return _titlesApplied; } }
     internal static int UnknownItemIds { get { return _unknownItemIds; } }
     internal static int TrackedTitles { get { return Snapshots.Count; } }
+    internal static int WorldNamesApplied { get { return _worldNamesApplied; } }
+
+    internal static void BeginCollection(Item item) {
+        if (item != null && item.m_Info != null)
+            CollectionsInProgress.Add((int)item.m_Info.m_ID);
+    }
+
+    internal static void EndCollection(Item item) {
+        if (item != null && item.m_Info != null)
+            CollectionsInProgress.Remove((int)item.m_Info.m_ID);
+    }
+
+    internal static bool WorldNamesEnabled {
+        get {
+            try {
+                P2PSession session = P2PSession.Instance;
+                return session != null && (session.AmIMaster() || ReplTools.IsPlayingAlone());
+            } catch {
+                return false;
+            }
+        }
+    }
 
     internal static bool Apply(NotepadPlantTitleReplacer replacer) {
         if (replacer == null || string.IsNullOrEmpty(replacer.m_ItemID)) return false;
@@ -130,6 +156,45 @@ internal static class BotanicaRuntime {
         return changed;
     }
 
+    internal static bool ApplyWorldName(ItemInfo info, ref string result, string nativeKey) {
+        if (!WorldNamesEnabled || info == null || string.IsNullOrEmpty(result)) return false;
+
+        ItemsManager manager = ItemsManager.Get();
+        if (manager == null) return false;
+
+        // OnTaken records the first ground/plant pickup in Green Hell's persisted
+        // collected-item history. Reading that history preserves the native discovery
+        // flow without adding an ItemID to any notebook or information-unlock list.
+        bool firstPickup = CollectionsInProgress.Contains((int)info.m_ID);
+        if (!firstPickup && !manager.WasCollected(info.m_ID)) return false;
+
+        BotanicaEntry entry;
+        if (!BotanicaCatalog.TryGet(info.m_ID.ToString(), out entry)) return false;
+
+        string sourceName;
+        try {
+            Localization localization = GreenHellGame.Instance.GetLocalization();
+            sourceName = localization.Get(nativeKey);
+            if (string.IsNullOrEmpty(sourceName) ||
+                !result.StartsWith(sourceName, StringComparison.Ordinal)) {
+                sourceName = string.IsNullOrEmpty(info.m_LockedInfoID)
+                    ? string.Empty : localization.Get(info.m_LockedInfoID);
+            }
+        } catch {
+            return false;
+        }
+        if (string.IsNullOrEmpty(sourceName) ||
+            !result.StartsWith(sourceName, StringComparison.Ordinal)) return false;
+
+        result = BuildWorldDisplay(entry) + result.Substring(sourceName.Length);
+        _worldNamesApplied++;
+        if (ReportedWorldItemIds.Add(entry.ItemId)) {
+            Debug.Log("[Botany Discovery] World name applied: " + entry.ItemId +
+                (firstPickup ? " (first pickup)." : " (previously collected)."));
+        }
+        return true;
+    }
+
     private static int ApplyNativeTitles(PlantsTab tab) {
         int changed = 0;
         Text[] texts = tab.GetComponentsInChildren<Text>(true);
@@ -165,6 +230,9 @@ internal static class BotanicaRuntime {
     internal static void ResetCounters() {
         _titlesApplied = 0;
         _unknownItemIds = 0;
+        _worldNamesApplied = 0;
+        CollectionsInProgress.Clear();
+        ReportedWorldItemIds.Clear();
         ReportedUnknownItemIds.Clear();
         ReportedMissingTexts.Clear();
     }
@@ -201,6 +269,16 @@ internal static class BotanicaRuntime {
                 "</color>";
         }
         return title;
+    }
+
+    private static string BuildWorldDisplay(BotanicaEntry entry) {
+        string common = BotanicaLocalization.CommonName(entry);
+        string state = StateSuffix(common);
+        string scientific = "<i>" + entry.Scientific + "</i>";
+        if (BotanicaSettings.DisplayMode == BotanicaDisplayMode.Common) return common;
+        if (BotanicaSettings.DisplayMode == BotanicaDisplayMode.Scientific)
+            return scientific + state;
+        return common + " — " + scientific;
     }
 
     private static string StateSuffix(string common) {
