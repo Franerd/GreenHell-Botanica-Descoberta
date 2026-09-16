@@ -1,6 +1,6 @@
 # Runtime architecture
 
-Botany Discovery 2.2.0 is a presentation-only mod. It reads Green Hell state and
+Botany Discovery 2.3.0 is a presentation-only mod. It reads Green Hell state and
 changes visible text; it does not change gameplay data, discovery state, recipes,
 item effects, saves, or replicated state.
 
@@ -8,19 +8,20 @@ item effects, saves, or replicated state.
 
 | Local role | Notebook layer | World-name layer |
 | --- | --- | --- |
-| Guest client | Enabled | Disabled |
+| Guest client | Enabled | Enabled after local collection |
 | Multiplayer host | Enabled | Enabled after collection |
 | Single-player | Enabled | Enabled after collection |
 
 The notebook layer operates only on pages the game has already made available.
-The world layer checks authority dynamically and reads `ItemsManager.WasCollected`.
+The world layer checks for an active local session and reads that player's
+`ItemsManager.WasCollected` history.
 A transient first-pickup context changes the pickup message without writing to any
 Green Hell discovery collection. Cataloged seeds use the same rule and do not need a
 notebook page.
 
 No custom network message or replicated state is created. Late join and reconnect
-therefore require no reconstruction. If session authority changes, subsequent text
-requests immediately use the new local role.
+therefore require no reconstruction. Host and guests may see different names for the
+same item because discovery remains local to each player's native collection history.
 
 ## Runtime package
 

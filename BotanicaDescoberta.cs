@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BotanicaDescoberta : Mod {
     private const string HarmonyId = "com.franerd.greenhell.botany-discovery";
-    private const string Version = "2.2.0";
+    private const string Version = "2.3.0";
     private const string TargetGameVersion = "2.9.5";
     private static Harmony _harmony;
     private static bool _loaded;
@@ -128,7 +128,7 @@ public class BotanicaDescoberta : Mod {
             " | details " + OnOff(BotanicaSettings.ShowDetails) + " | font fit " +
             OnOff(BotanicaSettings.AdaptiveFont) + " | tracked " + BotanicaRuntime.TrackedTitles +
             " | applications " + BotanicaRuntime.TitlesApplied + " | world names " +
-            (BotanicaRuntime.WorldNamesEnabled ? "host/solo" : "notebook-only") +
+            (BotanicaRuntime.WorldNamesEnabled ? "local-player" : "notebook-only") +
             " | world applications " + BotanicaRuntime.WorldNamesApplied + ".");
         Debug.Log(Local(
             "Somente textos e preferências locais; nenhum desbloqueio, save ou estado de rede é alterado.",

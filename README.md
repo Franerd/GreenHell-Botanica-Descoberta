@@ -1,16 +1,23 @@
 # Botany Discovery
 
-Botany Discovery enriches Green Hell notebook entries that the player has already discovered with localized common and scientific botanical names. Its behavior deliberately changes with the local player's session role.
+Botany Discovery enriches Green Hell notebook entries that the player has already discovered with localized common and scientific botanical names. World and inventory names follow each local player's own collection history.
 
 ## Behavior by session role
 
 | Local player | Notebook | World, inventory and pickup text |
 | --- | --- | --- |
-| Guest client | Names already discovered entries | Remains completely native |
+| Guest client | Names already discovered entries | Names locally collected items |
 | Multiplayer host | Names already discovered entries | Names cataloged items after collection |
 | Single-player | Names already discovered entries | Names cataloged items after collection |
 
-Cataloged seeds are named on their first pickup and afterwards even if they do not have a notebook page. Before collection, unknown items remain unknown. The mod never unlocks pages or item information, reveals recipes, changes item effects, modifies Green Hell saves, or transmits custom cooperative state.
+Cataloged seeds are named on their first local pickup and afterwards even if they do not have a notebook page. Before collection, unknown items remain unknown. Each co-op participant keeps an independent discovery history through Green Hell's native local state. The mod never unlocks pages or item information, reveals recipes, changes item effects, modifies Green Hell saves, or transmits custom cooperative state.
+
+## Version 2.3.0
+
+- Enables the existing world, inventory and first-pickup botanical names for guest clients.
+- Uses each player's local `ItemsManager.WasCollected` history; host discovery does not reveal names for guests and guest discovery does not reveal names for the host.
+- Keeps the 2.2.0 patches, catalog and native discovery rules unchanged.
+- Adds no custom network messages, replicated state or save fields.
 
 ## Version 2.2.0
 
@@ -33,8 +40,8 @@ Cataloged seeds are named on their first pickup and afterwards even if they do n
 - Native Green Hell version detection, distinct from the package target in `modinfo.json`.
 - Botanical names in world prompts, inventory-facing names, pickup messages, plant
   replacers, fruits, and shelf sets when the local player is the host or is playing alone.
-- Guests remain notebook-only. Unknown items keep Green Hell's native unidentified name
-  until the game itself marks them as discovered.
+- Guests now receive the same local world-name layer as hosts. Unknown items keep Green
+  Hell's native unidentified name until that player collects them.
 - Cataloged unknown seeds receive their botanical name in the first pickup message and
   subsequent world/inventory text, even when they have no notebook page.
 
@@ -63,10 +70,10 @@ documented in [ARCHITECTURE.md](ARCHITECTURE.md).
 ## Compatibility and testing
 
 - Target: Green Hell 2.9.5.
-- Notebook behavior is local for host and client. World-name replacement runs only for
-  the host or single-player and does not replicate custom state.
-- A guest installation retains the complete 2.1.x notebook feature set; only the new
-  2.2.0 world-name layer is disabled for guests.
+- Notebook and world-name behavior are local for host and client. World-name replacement
+  reads each player's native collection history and does not replicate custom state.
+- Different participants may correctly see different names for the same botanical item
+  until each player has collected it locally.
 - The mod never adds notebook pages or ItemIDs to Green Hell's discovered-item lists.
 - Cooperative entry, automatic title application, unload, reload, and common/scientific rendering have been tested successfully.
 - `TEST-MATRIX.txt` tracks the remaining language, layout, save/load, reconnect, and mixed-installation scenarios.

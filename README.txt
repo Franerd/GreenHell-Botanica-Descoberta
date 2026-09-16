@@ -1,4 +1,8 @@
-BOTANY DISCOVERY 2.2.0
+BOTANY DISCOVERY 2.3.0
+
+World, inventory and first-pickup botanical names now work for co-op guests
+using each player's own native local collection history. Discoveries are not
+shared by the mod and no custom network state is created.
 
 Botany Discovery enriches plant titles that already exist in the player's notebook.
 

@@ -60,7 +60,8 @@ internal static class BotanicaRuntime {
         get {
             try {
                 P2PSession session = P2PSession.Instance;
-                return session != null && (session.AmIMaster() || ReplTools.IsPlayingAlone());
+                return session != null &&
+                    (session.AmIMaster() || ReplTools.IsPlayingAlone() || session.IsValid());
             } catch {
                 return false;
             }

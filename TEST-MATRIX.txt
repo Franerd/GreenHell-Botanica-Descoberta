@@ -1,4 +1,4 @@
-BOTANY DISCOVERY 2.2.0 - IN-GAME RELEASE MATRIX
+BOTANY DISCOVERY 2.3.0 - IN-GAME RELEASE MATRIX
 
 [ ] New survival session: only already discovered notebook pages are changed.
 [ ] Existing save: known pages display names; save timestamp/data are otherwise unaffected.
@@ -8,8 +8,11 @@ BOTANY DISCOVERY 2.2.0 - IN-GAME RELEASE MATRIX
 [ ] Host: a cataloged unknown seed is named in its first pickup message.
 [ ] Host: a collected seed remains named in world/inventory even without a notebook page.
 [ ] Single-player: known world items use catalog names; unknown items stay unidentified.
-[ ] Client: world item names remain native and notebook titles still render locally.
-[ ] Late join and reconnect: client stays notebook-only and host world names remain active.
+[ ] Client: locally collected botanical items receive world and inventory names.
+[ ] Client: host-only collection does not reveal a botanical world name locally.
+[ ] Host: client-only collection does not reveal a botanical world name locally.
+[x] Save/load and reconnect preserve the client's native local collection history.
+[ ] Late join requires no custom reconstruction and retains per-player discovery.
 [ ] Host migration: the new authority gains world names; the former authority loses them.
 [ ] Death/respawn: notebook titles remain correct.
 [ ] Scene and mode changes: no duplicate patches or stale title objects.

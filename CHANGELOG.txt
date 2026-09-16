@@ -1,3 +1,10 @@
+2.3.0 - Descoberta local também para clientes
+- Habilita nomes botânicos no mundo, inventário e primeira coleta para clientes
+  convidados, usando o histórico local nativo de cada jogador.
+- Mantém independentes as descobertas do host e dos clientes.
+- Não adiciona mensagens de rede, estado replicado, campos de save ou novos patches.
+- Preserva o catálogo, as regras de identificação e o comportamento estável da 2.2.0.
+
 2.2.0 - Nomes botânicos no mundo para o host
 - Exibe nomes botânicos em textos de itens no mundo, inventário e coleta quando
   o jogador local é host ou está em uma partida solo.
