@@ -1,4 +1,4 @@
-BOTANY DISCOVERY 2.3.0
+BOTANY DISCOVERY 2.3.1
 
 World, inventory and first-pickup botanical names now work for co-op guests
 using each player's own native local collection history. Discoveries are not

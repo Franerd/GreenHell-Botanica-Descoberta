@@ -1,4 +1,4 @@
-BOTANY DISCOVERY 2.3.0 - IN-GAME RELEASE MATRIX
+BOTANY DISCOVERY 2.3.1 - IN-GAME RELEASE MATRIX
 
 [ ] New survival session: only already discovered notebook pages are changed.
 [ ] Existing save: known pages display names; save timestamp/data are otherwise unaffected.

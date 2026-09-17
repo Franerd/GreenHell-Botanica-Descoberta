@@ -1,3 +1,9 @@
+2.3.1 - Correção do indicador de atualização
+- Usa o endpoint oficial do Green Hell Modding para consultar a versão publicada.
+- Remove o falso aviso de versão desatualizada causado pela quebra de linha do
+  arquivo de versão hospedado no GitHub.
+- Não altera descoberta, interface, multiplayer, saves ou comportamento do mod.
+
 2.3.0 - Descoberta local também para clientes
 - Habilita nomes botânicos no mundo, inventário e primeira coleta para clientes
   convidados, usando o histórico local nativo de cada jogador.

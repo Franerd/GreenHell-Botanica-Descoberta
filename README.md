@@ -12,6 +12,11 @@ Botany Discovery enriches Green Hell notebook entries that the player has alread
 
 Cataloged seeds are named on their first local pickup and afterwards even if they do not have a notebook page. Before collection, unknown items remain unknown. Each co-op participant keeps an independent discovery history through Green Hell's native local state. The mod never unlocks pages or item information, reveals recipes, changes item effects, modifies Green Hell saves, or transmits custom cooperative state.
 
+## Version 2.3.1
+
+- Uses the official Green Hell Modding version endpoint to avoid a false outdated-version warning.
+- Contains no gameplay, save, UI, or multiplayer behavior changes.
+
 ## Version 2.3.0
 
 - Enables the existing world, inventory and first-pickup botanical names for guest clients.

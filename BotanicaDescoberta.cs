@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BotanicaDescoberta : Mod {
     private const string HarmonyId = "com.franerd.greenhell.botany-discovery";
-    private const string Version = "2.3.0";
+    private const string Version = "2.3.1";
     private const string TargetGameVersion = "2.9.5";
     private static Harmony _harmony;
     private static bool _loaded;

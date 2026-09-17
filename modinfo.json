@@ -2,12 +2,12 @@
   "name": "Botany Discovery",
   "author": "FraNerd",
   "description": "Enriches discovered notebook entries and locally collected botanical items for every player, including co-op guests. Discovery remains personal to each installation; the mod never changes saves or replicates custom state.",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "license": "GNU AGPLv3",
   "icon": "icon.png",
   "banner": "banner.jpg",
   "gameVersion": "2.9.5",
-  "updateUrl": "https://raw.githubusercontent.com/Franerd/GreenHell-Botanica-Descoberta/main/version.txt",
+  "updateUrl": "https://greenhellmodding.com/api/v1/mods/botanica-descoberta/version.txt",
   "isModPermanent": false,
   "excludedFiles": ["botany-catalog.json", "README.txt", "CHANGELOG.txt", "TEST-MATRIX.txt", "version.txt"]
 }
