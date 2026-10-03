@@ -1,0 +1,49 @@
+name: Build distributable GHMod
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'dist/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build GHMod
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          rm -f dist/modinstaller.botanica-descoberta.ghmod
+          zip -j -q dist/modinstaller.botanica-descoberta.ghmod \
+            BotanicaCatalog.cs \
+            BotanicaCatalog.Generated.cs \
+            BotanicaDescoberta.cs \
+            BotanicaLocalization.cs \
+            BotanicaRuntime.cs \
+            BotanicaSettings.cs \
+            modinfo.json \
+            icon.png \
+            banner.jpg
+
+      - name: Commit distributable when changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/modinstaller.botanica-descoberta.ghmod
+          if git diff --cached --quiet; then
+            echo "GHMod already current."
+            exit 0
+          fi
+          git commit -m "build: update distributable ghmod [skip ci]"
+          git push
