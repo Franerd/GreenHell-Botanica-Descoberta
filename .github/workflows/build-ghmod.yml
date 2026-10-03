@@ -3,8 +3,17 @@ name: Build distributable GHMod
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - 'dist/**'
+    paths:
+      - 'BotanicaCatalog.cs'
+      - 'BotanicaCatalog.Generated.cs'
+      - 'BotanicaDescoberta.cs'
+      - 'BotanicaLocalization.cs'
+      - 'BotanicaRuntime.cs'
+      - 'BotanicaSettings.cs'
+      - 'modinfo.json'
+      - 'icon.png'
+      - 'banner.jpg'
+      - '.github/workflows/build-ghmod.yml'
   workflow_dispatch:
 
 permissions:
@@ -17,22 +26,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build GHMod
+      - name: Build deterministic GHMod
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p dist
-          rm -f dist/modinstaller.botanica-descoberta.ghmod
-          zip -j -q dist/modinstaller.botanica-descoberta.ghmod \
-            BotanicaCatalog.cs \
-            BotanicaCatalog.Generated.cs \
-            BotanicaDescoberta.cs \
-            BotanicaLocalization.cs \
-            BotanicaRuntime.cs \
-            BotanicaSettings.cs \
-            modinfo.json \
-            icon.png \
+          files=(
+            BotanicaCatalog.cs
+            BotanicaCatalog.Generated.cs
+            BotanicaDescoberta.cs
+            BotanicaLocalization.cs
+            BotanicaRuntime.cs
+            BotanicaSettings.cs
+            modinfo.json
+            icon.png
             banner.jpg
+          )
+          touch -t 200001010000 "${files[@]}"
+          rm -f dist/modinstaller.botanica-descoberta.ghmod
+          zip -X -j -q dist/modinstaller.botanica-descoberta.ghmod "${files[@]}"
 
       - name: Commit distributable when changed
         shell: bash
